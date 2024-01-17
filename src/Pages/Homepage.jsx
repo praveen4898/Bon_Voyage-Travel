@@ -1,7 +1,9 @@
+
 import { Box, background } from '@chakra-ui/react'
 import React from 'react'
 import backgroundImage from '../Image/homeBG.jpg';
-
+import React from 'react'
+import ImageCarousel from '../Components/Carousel'
 const Homepage = () => {
   return (
     <Box className='home'  style={{
@@ -14,6 +16,14 @@ const Homepage = () => {
       }}>
     
     </Box>
+
+const Homepage = () => {
+  return (
+    <div>
+        <ImageCarousel />
+
+    </div>
+
   )
 }
 
