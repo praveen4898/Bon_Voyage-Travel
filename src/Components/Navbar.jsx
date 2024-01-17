@@ -3,13 +3,13 @@ import React from 'react';
 import { Box, Button, Flex, Heading, Link as ChakraLink , Stack} from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { FaUserInjured } from "react-icons/fa";
-import Destination from '../Pages/Destination';
+
 
 
 
 export const Navbar = () => {
     return (
-        <Box bg='white' boxShadow='md' p='6' borderBottom='1px' borderColor='gray.200'>
+        <Box >
             <Flex maxWidth='container.xl' alignItems='center' justify='space-between'>
                 <Box ml='40'>
                     <Heading size='md' >LOGO</Heading>
@@ -50,4 +50,4 @@ export const Navbar = () => {
     );
 };
 
-export default Navbar;
+

@@ -1,8 +1,19 @@
+import { Box, background } from '@chakra-ui/react'
 import React from 'react'
+import backgroundImage from '../Image/homeBG.jpg';
 
 const Homepage = () => {
   return (
-    <div>Homepage</div>
+    <Box className='home'  style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+      
+        height: '95vh',
+       
+        
+      }}>
+    
+    </Box>
   )
 }
 
