@@ -1,30 +1,25 @@
-
-import { Box, background } from '@chakra-ui/react'
-import React from 'react'
+import { Box } from '@chakra-ui/react';
+import React from 'react';
 import backgroundImage from '../Image/homeBG.jpg';
-import React from 'react'
-import ImageCarousel from '../Components/Carousel'
-const Homepage = () => {
-  return (
-    <Box className='home'  style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-      
-        height: '95vh',
-       
-        
-      }}>
-    
-    </Box>
+
+import ImageCarousel from '../Components/Carousel';
 
 const Homepage = () => {
   return (
-    <div>
+    <Box>
+      <Box
+        className='home'
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          height: '95vh',
+        }}
+      ></Box>
+      <Box>
         <ImageCarousel />
+      </Box>
+    </Box>
+  );
+};
 
-    </div>
-
-  )
-}
-
-export default Homepage
+export default Homepage;
