@@ -27,21 +27,21 @@ const ImageCarousel = () => {
 
   return (
     <div>
-      <h2>Explore Our Destinations</h2>
+      <h2 style={{color:"black", fontSize:"30px", fontWeight:"bolder" , padding:"5px"}}>Explore Our Destinations</h2>
       <Carousel
         selectedItem={currIndex}
         onChange={index => setCurrIndex(index)}
-        style={{width:"60%"}}
+        style={{width:"60%", paddingTop:"3px"}}
       >
         {carouselImages.map((image, index) => (
           <div key={index} style={{display:"flex", justifyContent:"center", gap:"20px"}}>
             <img
               src={image}
               alt={""}
-              style={{ width:'30%', height:'40%' }}
+              style={{ width:'30%', height:'30%' ,paddingTop:"3px"}}
             />
-            <div style={{width:"40%"}}>
-               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque repellat eaque maxime dignissimos dolore officia quaerat aliquid vitae iure est in incidunt itaque sed officiis mollitia ipsum, nostrum unde! Vitae maxime impedit rem aliquam dignissimos?</p>          
+            <div style={{width:"40%" , paddingTop:"20px", fontSize:"18px"}}>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta doloribus deleniti nulla laborum placeat id eligendi facere quae dolor, veritatis repellat asperiores, temporibus sapiente, eaque laboriosam neque expedita ratione enim ad vero nam. Aliquid odit ullam libero vel veniam commodi aliquam odio perferendis nisi nam praesentium neque voluptate corrupti, earum tempora reprehenderit, amet adipisci maxime impedit? Blanditiis ipsam sed vel.</p>          
                 </div>
           </div>
         ))}
