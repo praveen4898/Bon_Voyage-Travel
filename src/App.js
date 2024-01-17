@@ -1,13 +1,17 @@
 import './App.css';
-import Homepage from './Pages/Homepage';
+
+import { Navbar } from './Components/Navbar';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './Redux/store';
+import Allroutes from './Routing/Allroutes';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-         <Homepage />
-      </header>
-    </div>
+       <Navbar/>
+      <Allroutes />
+     </div>
   );
 }
 
