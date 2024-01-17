@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react'
 import { Box,Heading,Flex } from '@chakra-ui/react'
 import { SideDrawer } from '../Components/AdminSide/SideDrawer'
@@ -64,3 +65,14 @@ export const Admin = () => {
   )
 }
 
+=======
+import React from 'react'
+
+const Admin = () => {
+  return (
+    <div>Admin</div>
+  )
+}
+
+export default Admin
+>>>>>>> e339753a3833c3833a9415eca911a6d18ee768d2
