@@ -40,8 +40,21 @@
 import React from 'react'
 
 function Bookingpage() {
+
+
+
+
+  
   return (
-    <div>Bookingpage</div>
+    <div>Bookingpage
+
+
+
+
+
+
+
+    </div>
   )
 }
 
