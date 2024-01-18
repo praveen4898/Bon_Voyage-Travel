@@ -59,3 +59,33 @@ function Bookingpage() {
 }
 
 export default Bookingpage
+
+// import React from 'react';
+// import { Link, useNavigate } from 'react-router-dom'; // Change this line
+
+// const Bookingpage = () => {
+//   const navigate = useNavigate(); // Change this line
+
+//   const handleMakePayment = () => {
+//     // Assuming you have booking details stored in some state
+//     const bookingDetails = {
+//       // Your booking details here
+//     };
+
+//     // Redirect to the payment page with booking details as state
+//     navigate('/payment', { state: { bookingDetails } }); // Change this line
+//   };
+
+//   return (
+//     <div>
+//       <nav>
+//         <Link to="/">Home</Link>
+//         <Link to="/booking">Booking</Link>
+//       </nav>
+//       <h1>Booking Page</h1>
+//       <button onClick={handleMakePayment}>Make Payment</button>
+//     </div>
+//   );
+// };
+
+// export default Bookingpage;
