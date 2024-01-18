@@ -1,23 +1,39 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from 'react'
 import { Box,Heading,Flex } from '@chakra-ui/react'
 import { SideDrawer } from '../Components/AdminSide/SideDrawer'
 import  axios  from 'axios';
 import { AdminTable } from '../Components/AdminSide/AdminTable';
 
+import { useDispatch, useSelector } from 'react-redux';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import { fetchDestinationData } from '../Redux/action';
+import Users from '../Components/AdminSide/Users';
 
 
 
-export const Admin = () => {
+ const Admin = () => {
         const [data,setData]=useState([]);
         const [users,setUsers]=useState([]);
+
+        const dispatch = useDispatch();
+        const { isloading, iserror, destination } = useSelector((state) => state);
+       
+        useEffect(() => {
+          dispatch(fetchDestinationData());
+        }, [dispatch]);
+        useEffect(() => {
+          setData(destination);
+        }, [destination]);
+        // console.log("dispatch data ",isloading,destination)
+      
+
+
     useEffect(()=>{
         async function fetchData(){
             try {
-                let res= await axios.get("https://mockserver-3.onrender.com/locations");
+                let res= await axios.get("https://mockserver-3.onrender.com/users");
                 // console.log(res.data);
-                setData(res.data);
+                setUsers(res.data);
             } catch (error) {
                 console.log(error)
             }
@@ -25,7 +41,7 @@ export const Admin = () => {
         fetchData();
     },[])
 
-    // console.log(data);
+    console.log(users);
   return (
     <Box>
         
@@ -48,7 +64,7 @@ export const Admin = () => {
    {data.length<=0?"loading......." : <AdminTable props={data}/>}
     </TabPanel>
     <TabPanel>
-      <p>two!</p>
+        <Users props={users} />
     </TabPanel>
     <TabPanel>
       <p>three!</p>
@@ -56,23 +72,9 @@ export const Admin = () => {
   </TabPanels>
 </Tabs>
         
-      
-       
-
-     
 
     </Box>
   )
 }
 
-=======
-import React from 'react'
-
-const Admin = () => {
-  return (
-    <div>Admin</div>
-  )
-}
-
-export default Admin
->>>>>>> e339753a3833c3833a9415eca911a6d18ee768d2
+export default Admin;

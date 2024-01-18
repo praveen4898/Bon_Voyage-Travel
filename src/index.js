@@ -9,17 +9,8 @@ import { store } from './Redux/store';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 
-import { ChakraProvider } from '@chakra-ui/react'
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<<<<<<< HEAD
-  <React.StrictMode>
-     <ChakraProvider>
-    <App />
-    </ChakraProvider>
-  </React.StrictMode>
-=======
  <ChakraProvider >
   <Provider store={store}>
    <Router>
@@ -29,7 +20,6 @@ root.render(
  </ChakraProvider>
    
  
->>>>>>> e339753a3833c3833a9415eca911a6d18ee768d2
 );
 
 // If you want to start measuring performance in your app, pass a function

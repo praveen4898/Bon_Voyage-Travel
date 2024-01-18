@@ -11,8 +11,11 @@ import {
     TableContainer,
     Image ,
     Button,
+    Flex,
+    Spacer,
   } from '@chakra-ui/react'
 import axios from 'axios';
+import AddLocations from './AddLocations';
 
 
   // const dynamicSort = (key, order='asc') => (a, b) => {
@@ -78,12 +81,14 @@ const handleDelete=(postId)=>{
 
 }
 
-  return (
+  return (<>
+      <AddLocations />
+      <Spacer/>
     <TableContainer p={'5'}>
-    <Table variant='striped' >
+    <Table variant='striped' colorScheme={'blue'} >
       <TableCaption>Locations Available</TableCaption>
       <Thead>
-        <Tr>
+        <Tr colorScheme={'blue'}>
           <Th>Image</Th>
           <Th onClick={handleSortCountry}>country</Th>
           <Th>location</Th>
@@ -119,5 +124,6 @@ const handleDelete=(postId)=>{
       
     </Table>
   </TableContainer>
+  </>
   )
 }
