@@ -5,7 +5,7 @@ import  axios  from 'axios';
 import { AdminTable } from '../Components/AdminSide/AdminTable';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Spacer } from '@chakra-ui/react'
 import { fetchDestinationData } from '../Redux/action';
 import Users from '../Components/AdminSide/Users';
 
@@ -28,9 +28,9 @@ import Users from '../Components/AdminSide/Users';
       
 
 
-    useEffect(()=>{
-        async function fetchData(){
-            try {
+   useEffect(()=>{
+        async function fetchUsers(){
+             try {
                 let res= await axios.get("https://mockserver-3.onrender.com/users");
                 // console.log(res.data);
                 setUsers(res.data);
@@ -38,7 +38,7 @@ import Users from '../Components/AdminSide/Users';
                 console.log(error)
             }
         }
-        fetchData();
+        fetchUsers();
     },[])
 
     console.log(users);
@@ -47,16 +47,18 @@ import Users from '../Components/AdminSide/Users';
         
 
         <Flex bgColor={'whitesmoke'} p={'4'} justifyContent={'space-evenly'}> 
-        <SideDrawer/>
-        <Heading >Admin Dashboard</Heading>
+        {/* <SideDrawer/> */}
+
+        <Heading color='teal' >Admin Dashboard</Heading>
         </Flex>
        
-       
+       <Spacer/>
+       <Spacer/>
 <Tabs isFitted variant='soft-rounded' colorScheme='blue' >
   <TabList>
     <Tab>Locations</Tab>
     <Tab>Users</Tab>
-    <Tab>Three</Tab>
+  
   </TabList>
 
   <TabPanels  >
@@ -65,9 +67,6 @@ import Users from '../Components/AdminSide/Users';
     </TabPanel>
     <TabPanel>
         <Users props={users} />
-    </TabPanel>
-    <TabPanel>
-      <p>three!</p>
     </TabPanel>
   </TabPanels>
 </Tabs>

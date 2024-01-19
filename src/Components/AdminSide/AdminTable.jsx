@@ -39,35 +39,18 @@ import AddLocations from './AddLocations';
 }
 
 export const AdminTable = ({props}) => {
-  const [data,setData]=useState([]);
+  const [data,setData]=useState(props);
  
-  useEffect(()=>{
-    setData(props)
-   },[props])
+  // useEffect(()=>{
+  //   setData(props)
+  //  },[data])
 
+  const handleSortCountry=(e)=>{
+  e.preventDefault();
+  const sortedByCountry=data.sort((a,b)=>{return (b.country).localeCompare(a.country)});
 
-
-// const sortedArray=[...data].sort(dynamicSort(data.country,'asc'));
-// console.log('sortedArray',sortedArray)
-
-// const sortedByLocation=data.sort((a,b)=>{return (b.location).localeCompare(a.location)});
-
-
-// console.log(data)
-// 
-// const sortedById=useMemo(()=>{return props.sort((a,b)=> b.id-a.id)},[]);
-// const sortedByLocation=useMemo(()=>{return props.sort((a,b)=>{return b.location-a.location})},[]);
-
-// const sortedByPrice=useMemo(()=>{return props.sort((a,b)=>{return b.price-a.price})},[]);
-//  const sortedByCounrty=(data)=>data.sort((a,b)=>{return b.country-a.country});
-
-
-const handleSortCountry=()=>{
-
-//   const sortedByCountry=data.sort((a,b)=>{return (b.country).localeCompare(a.country)});
-
-//   setData(sortedByCountry);
-//   console.log(sortedByCountry)
+  setData(sortedByCountry);
+  console.log(sortedByCountry)
   console.log("clicked")
 }
 // console.log("sorted",sortedById)
@@ -88,7 +71,7 @@ const handleDelete=(postId)=>{
     <Table variant='striped' colorScheme={'blue'} >
       <TableCaption>Locations Available</TableCaption>
       <Thead>
-        <Tr colorScheme={'blue'}>
+        <Tr>
           <Th>Image</Th>
           <Th onClick={handleSortCountry}>country</Th>
           <Th>location</Th>

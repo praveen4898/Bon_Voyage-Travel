@@ -42,13 +42,7 @@ import {
             {/* <DrawerCloseButton /> */}
             <DrawerBody>
                 <Flex direction={'column'}  textAlign={'center'}  m={'auto'} gap={'50px'}>              
-                    <Link fontSize={'xx-large'} >Dashboard</Link>
-                    <Link fontSize={'xx-large'}>Locations</Link>
-                    <Link fontSize={'xx-large'} >Users</Link>
-                    {/* <Link fontSize={'xx-large'} whiteSpace={'nowrap'}>Add Location</Link> */}
-                    
-
-                  
+                 
             <Button 
             colorScheme='red' 
             variant='solid' 

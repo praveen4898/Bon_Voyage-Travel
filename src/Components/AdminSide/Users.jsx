@@ -12,6 +12,19 @@ import {
     Image ,
     Button,
   } from '@chakra-ui/react'
+import axios from 'axios';
+
+  async function DeleteUser(id){
+    try {
+        let res= await axios.delete(`https://mockserver-3.onrender.com/users/${id}`);
+        
+        console.log(res.data)
+        console.log(id)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 const Users = ({props}) => {
 
     
