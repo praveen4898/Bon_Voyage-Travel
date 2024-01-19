@@ -79,17 +79,17 @@ const PaymentPage = () => {
         <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
       </FormControl>
 
-      <FormControl isRequired>
+      <FormControl >
         <FormLabel>From Where</FormLabel>
         <Input type="text" value={fromWhere} isReadOnly />
       </FormControl>
 
-      <FormControl isRequired>
+      <FormControl >
         <FormLabel>To Where</FormLabel>
         <Input type="text" value={toWhere}  isReadOnly/>
       </FormControl>
 
-      <FormControl isRequired>
+      <FormControl >
         <FormLabel>Amount</FormLabel>
         <Input type="number" value={amount}  isReadOnly/>
       </FormControl>
