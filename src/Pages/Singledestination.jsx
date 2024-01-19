@@ -113,6 +113,8 @@ const Singledestination = () => {
 
 
   const [isAlertVisible, setAlertVisible] = useState(false);
+
+
   const handleBookNowClick = () => {
     setAlertVisible(true);
   };
@@ -226,7 +228,7 @@ const Singledestination = () => {
 
 
       </Grid>
-      <Box><Button onClick={()=>{handleBookNowClick();handleBooking()}} colorScheme='blue' _hover={{ bg: 'blue.800' }}>Add To Booking</Button></Box>
+      <Box><Button onClick={handleBookNowClick} colorScheme='blue' _hover={{ bg: 'blue.800' }}>Add To Booking</Button></Box>
       <br />
 
       
@@ -239,7 +241,7 @@ const Singledestination = () => {
               Your Favourite  package has been added to Bookings
               <br />Few more steps to Take Off!!!!!
               <br />
-              <Button colorScheme='blue' _hover={{ bg: 'blue.800' }}>Go To Booking</Button>
+              <Button colorScheme='blue' _hover={{ bg: 'blue.800' }} onClick={handleBooking}>Go To Booking</Button>
             </AlertDescription>
           </Box>
           <CloseButton
