@@ -1,8 +1,8 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
 import backgroundImage from '../Image/homeBG.jpg';
-
 import ImageCarousel from '../Components/Carousel';
+import { FooterSection } from '../Components/Footer';
 
 const Homepage = () => {
   return (
@@ -17,6 +17,9 @@ const Homepage = () => {
       ></Box>
       <Box>
         <ImageCarousel />
+      </Box>
+      <Box>
+        <FooterSection />
       </Box>
     </Box>
   );

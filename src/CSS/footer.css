@@ -1,0 +1,131 @@
+.footerMain {
+    background-color: #a0caba;
+    height: auto;
+    width: 100%;
+}
+
+.footer {
+    height: auto;
+    display: flex;
+}
+
+.content {
+    margin: 60px;
+    width: auto;
+    height: auto;
+    text-align: start;
+}
+
+.content>h1 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content>p {
+    font-size: 15px;
+    line-height: 4vh;
+}
+
+.horizontalrule {
+    border: none;
+    border-radius: 8px;
+    margin: auto;
+    height: 3px;
+    width: 92%;
+    background-color: #77adbb;
+}
+
+.icon {
+    display: flex;
+    gap: 12px;
+}
+
+.icon>img {
+    width: 35px;
+    height: 35px;
+}
+
+.playstore {
+    border: 2px solid 
+    #77adbb;
+    width: 130px;
+    display: flex;
+    gap: 3px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+
+}
+
+.Appstore {
+    margin-bottom: 25px;
+    border: 2px solid 
+    #77adbb;
+    width: 130px;
+    display: flex;
+    gap: 10px;
+    border-radius: 8px;
+}
+.copyright{
+    width: 92%;
+    margin: auto auto 0 auto;
+    display: flex;
+    gap: 74%;
+}
+
+
+@media (min-width:200px) and (max-width:520px) {
+    .footerMain{
+        height: auto;
+    }
+    .footer{
+        height: auto;
+        flex-direction: column;
+    }
+    .content{
+        margin: 10px;
+    }
+    .copyright{
+        width: 100%;
+        flex-direction: column;
+    }
+    .sub2copyright>p{
+        margin: auto;
+    }
+}
+@media (min-width:521px) and (max-width:1068px) {
+    .footerMain{
+        height: auto;
+    }
+    .footer{
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .content{
+        margin: 10px;
+    }
+    .copyright{
+        width: 100%;
+        flex-direction: column;
+    }
+    .sub2copyright>p{
+        margin: auto;
+    }
+}
+
+@media (min-width:1069px)  and (max-width:1155px){
+    .footerMain{
+        height: auto;
+    }
+    .footer{
+        height: auto;
+    }
+
+    .copyright{
+        width: 92%;
+        margin: auto auto 0 auto;
+        display: flex;
+        gap: 125vh;
+    }
+}
