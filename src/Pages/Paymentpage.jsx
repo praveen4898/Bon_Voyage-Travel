@@ -213,17 +213,46 @@ const PaymentPage = () => {
   const [amount, setAmount] = useState('');
 
   const handlePayAmount = async () => {
-    // Your existing logic here...
-  };
+        if (!name || !email || !from || !to || !amount) {
+          toast({
+            title: 'Fill in all details',
+            status: 'warning',
+            duration: 3000,
+            isClosable: true,
+          });
+          return;
+        }
+    
+        try {
+          // await paymentProcessing();
+          toast({
+            title: 'Payment Successful',
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+          });
+        } catch (error) {
+          toast({
+            title: 'Payment Failed',
+            description: 'Please try again.',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+          });
+        }
+      };
 
   return (
-    <Flex>
-      {/* Left Div for Form */}
+    <Flex >
       <Box flex="1" p="5">
-        <h1 style={{ color: 'black', fontSize: '30px', fontWeight: 'bolder', marginBottom: '20px' }}>Payment Page</h1>
+        <div style={{display:"flex" , gap:"15px"}}>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtsoMFdfPoV92m32OwEV9DpNVCIV44zGACmn81zpMHZn6-AASxGkWtJOcRal4SYNSXkqk&usqp=CAU" alt="..." style={{width:"20%", height:"20%"}}/>
+        <h1 style={{ color: 'black', fontSize: '30px', fontWeight: 'bolder', marginBottom: '20px' , marginTop:"20px"}}>Payment Page</h1>
+        </div>
+        
         <FormControl isRequired>
           <FormLabel>Name</FormLabel>
-          <Input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+          <Input type="name" value={name} onChange={(e) => setName(e.target.value)} />
         </FormControl>
 
         <FormControl isRequired>
@@ -252,7 +281,7 @@ const PaymentPage = () => {
   <option value='option3'>Option 3</option>
 </Select>
         <HStack spacing="2" mt="4">
-          <label htmlFor="password" style={{ fontSize: '16px' , fontFamily:"bolder"}} isRequired>
+          <label htmlFor="password" style={{ fontSize: '23px' , fontFamily:"bolder"}} isRequired>
             Enter Password
           </label>
           <PinInput type="alphanumeric" mask>
@@ -269,13 +298,12 @@ const PaymentPage = () => {
           Pay Amount {amount}
         </Button>
       </Box>
-
-      {/* Right Div for Image */}
       <Box flex="1">
-        {/* Add your image here */}
-        <img src="https://img.theweek.in/content/dam/week/magazine/theweek/business/images/2023/12/9/54-shutterstock.jpg" alt="Payment" style={{ width: '80%', height: '80%', objectFit: 'cover' }} />
+       
+        <img src="https://img.theweek.in/content/dam/week/magazine/theweek/business/images/2023/12/9/54-shutterstock.jpg" alt="Payment" style={{ width: '80%', height: '80%', objectFit: 'cover' , marginTop:"20px" , borderRadius:"20%"}} />
       </Box>
     </Flex>
+    
   );
 };
 
