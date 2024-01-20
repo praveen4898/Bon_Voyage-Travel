@@ -1,15 +1,15 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+  } */
   
  
   
   /* Media queries for responsiveness */
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     .home {
-      /* Adjust styles for smaller screens */
+      
       background-size: contain;
     }
-  }
+  } */
