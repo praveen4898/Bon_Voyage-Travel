@@ -18,9 +18,7 @@ const Homepage = () => {
       <Box>
         <ImageCarousel />
       </Box>
-      <Box>
-        <FooterSection />
-      </Box>
+     
     </Box>
   );
 };

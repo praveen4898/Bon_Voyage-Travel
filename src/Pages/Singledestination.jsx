@@ -187,9 +187,7 @@ const Singledestination = () => {
         </Alert>
       )}
     </Box>
-    <Box>
-    <FooterSection />
-    </Box>
+    
     </Box>
     
 
