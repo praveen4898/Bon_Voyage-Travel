@@ -5,6 +5,10 @@ import ImageCarousel from '../Components/Carousel';
 import { FooterSection } from '../Components/Footer';
 import PopularPlaces from '../Components/PopularPlaces';
 
+import FirstDiv from '../Components/FirstDiv';
+import Reviews from '../Components/Reviews';
+
+
 
 const Homepage = () => {
   return (
@@ -21,7 +25,9 @@ const Homepage = () => {
       <Box>
         <ImageCarousel />
       </Box>
-     
+     <Box>
+      <Reviews />
+     </Box>
     </Box>
   );
 };
