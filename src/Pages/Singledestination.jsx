@@ -95,7 +95,7 @@ const Singledestination = () => {
     <Box
     position="relative"
       minHeight="100vh"
-      background={`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${coverimage})`}
+      background={`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${singleData.image})`}
       backgroundSize="cover"
       backgroundPosition="center"
       display="flex"
