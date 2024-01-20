@@ -91,7 +91,7 @@ const handleNavi=()=>{
         <Button colorScheme='blue' _hover={{ bg: 'blue.800' }} onClick={handleNavi} >Proceed to Payment</Button>
       </Box>
       <Box>
-  <FooterSection />
+  
 </Box>
     </div>
 

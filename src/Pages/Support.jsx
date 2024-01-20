@@ -73,9 +73,7 @@ export const Support = () => {
                     </div>
                 </div>
             </Box>
-            <Box>
-                <FooterSection />
-            </Box>
+           
         </Box>
 
     )
