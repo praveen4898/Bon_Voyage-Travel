@@ -8,6 +8,7 @@ import  Singledestination  from '../Pages/Singledestination';
 import Paymentpage from '../Pages/Paymentpage';
 import Admin from '../Pages/Admin';
 import Defaultpage from '../Pages/Defaultpage';
+import Support from '../Pages/Support';
 
 const Allroutes = () => {
   return (
@@ -16,6 +17,7 @@ const Allroutes = () => {
       <Route path="/booking" element={<Bookingpage />} />
       <Route path="/destination" element={<Destination />} />
       <Route path="/singledestination/:id" element={<Singledestination />} />
+      <Route path="/support" element={<Support/>} />
       <Route path="/login" element={<Loginsignup />} />
       <Route path="/payment" element={<Paymentpage />}/>
       <Route path='/admin' element={<Admin /> }/>

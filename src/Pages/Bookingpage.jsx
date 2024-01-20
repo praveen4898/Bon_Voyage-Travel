@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteBookingData, fetchBookingsData } from '../Redux/action';
 import { Box, Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Button } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom';
+import FooterSection from '../Components/Footer';
 
 const Bookingpage = () => {
   const dispatch = useDispatch();
@@ -18,8 +20,10 @@ const Bookingpage = () => {
   const handleDeleteBooking = (id) => {
     dispatch(deleteBookingData(id))
   }
-
-
+const navigate=useNavigate()
+const handleNavi=()=>{
+  navigate("/payment")
+}
 
   return (
     <div>Bookingpage
@@ -80,11 +84,15 @@ const Bookingpage = () => {
           ))}
         </div>
       )}
-      <Box>
+      <Box
+      margin="30px">
 
 
-        <Button colorScheme='blue' _hover={{ bg: 'blue.800' }} >Proceed to Payment</Button>
+        <Button colorScheme='blue' _hover={{ bg: 'blue.800' }} onClick={handleNavi} >Proceed to Payment</Button>
       </Box>
+      <Box>
+  <FooterSection />
+</Box>
     </div>
 
 

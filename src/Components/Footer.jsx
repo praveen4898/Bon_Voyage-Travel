@@ -9,7 +9,7 @@ export const FooterSection = () => {
             <div className='footerMain' >
                 <div className="footer">
                     < div className='content'>
-                        <h1 style={{ color: "#6388a6" }}>Support</h1>
+                        <a href="/support"><h1 style={{ color: "#6388a6" }}>Support</h1></a>
                         <p>Help Center</p>
                         <p>Safety information</p>
                         <p>Cancellation Option</p>
@@ -34,7 +34,7 @@ export const FooterSection = () => {
                         <p>How to homeowner responsibly</p>
                     </div >
                     < div className='content'>
-                        <h1 style={{ color: "#6388a6" }}>About</h1>
+                        <a href="/about"><h1 style={{ color: "#6388a6" }}>About</h1></a>
                         <p>Newsroom</p>
                         <p>Learn about new features</p>
                         <p>Letter from our founder</p>
@@ -43,6 +43,7 @@ export const FooterSection = () => {
                         <p>WorldTravelLuxe</p>
                     </div >
                     < div className='content'>
+                        <a href="https://play.google.com" target='_blank'>
                         <button className='playstore'>
                             <div>
                                 <img width="35" height="35" src="https://img.icons8.com/fluency/48/google-play.png" alt="google-play" />
@@ -52,6 +53,8 @@ export const FooterSection = () => {
                                 <h4 style={{ marginTop: "-5px", fontWeight: "600" }}>Google Play</h4>
                             </div>
                         </button>
+                        </a>
+                        <a href="https://www.apple.com/in/app-store/"  target='_blank'>
                         <button className='Appstore'>
                             <div>
                                 <img width="35" height="35" src="https://img.icons8.com/ios-glyphs/30/mac-os.png" alt="mac-os" />
@@ -61,10 +64,11 @@ export const FooterSection = () => {
                                 <h4 style={{ marginTop: "-5px", fontWeight: "600" }}>App Store</h4>
                             </div>
                         </button>
+                        </a>
                         <div className="icon">
-                            <a href="https://www.facebook.com/login/"><img src={fbicon} style={{width:"40px", height:"40px"}} alt="Fb" /></a>
-                            <a href="https://twitter.com/login"><img src={twittericon} style={{width:"40px", height:"40px"}} alt="Twitter" /></a>
-                            <a href="https://www.instagram.com/accounts/login/?hl=en"><img src={instaicon} style={{width:"40px", height:"40px"}} alt="Insta" /></a>
+                            <a href="https://www.facebook.com/login/"  target='_blank'><img src={fbicon} style={{width:"40px", height:"40px"}} alt="Fb" /></a>
+                            <a href="https://twitter.com/login"  target='_blank'><img src={twittericon} style={{width:"40px", height:"40px"}} alt="Twitter" /></a>
+                            <a href="https://www.instagram.com/accounts/login/?hl=en"  target='_blank'><img src={instaicon} style={{width:"40px", height:"40px"}} alt="Insta" /></a>
                         </div>
                     </div >
                 </div>

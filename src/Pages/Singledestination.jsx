@@ -15,6 +15,9 @@ import {
   Text,
   Image,
 } from '@chakra-ui/react';
+import coverimage from '../Image/option1.jpg'
+import FooterSection from '../Components/Footer';
+
 
 const url = "https://mockserver-3.onrender.com/locations";
 const bookingurl = "https://mockserver-3.onrender.com/bookings";
@@ -87,6 +90,21 @@ const Singledestination = () => {
   }
 
   return (
+
+
+    <Box
+    position="relative"
+      minHeight="100vh"
+      background={`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${singleData.image})`}
+      backgroundSize="cover"
+      backgroundPosition="center"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+    
+    >
+
     <Box
       maxWidth="800px"
       margin="auto"
@@ -94,6 +112,7 @@ const Singledestination = () => {
       boxShadow="lg"
       borderRadius="md"
       marginTop="50px"
+      marginBottom="50px"
       backgroundColor="gray.100" // Set the background color for the entire box
     >
       <Flex direction={['column', 'row']} align="center">
@@ -101,7 +120,6 @@ const Singledestination = () => {
           <Image
             width="100%"
             height="100%"
-            style={{ border: '2px solid black' }}
             src={singleData.image}
             alt=""
           />
@@ -169,7 +187,15 @@ const Singledestination = () => {
         </Alert>
       )}
     </Box>
+    <Box>
+    <FooterSection />
+    </Box>
+    </Box>
+    
+
+    
   );
+  
 };
 
 export default Singledestination;
