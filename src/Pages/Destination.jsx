@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDestinationData } from '../Redux/action';
-import  { SingleDesti } from './Destinationcard';
+import { SingleDesti } from './Destinationcard';
+// import  { SingleDesti } from './Destinationcard';
 
 const Destination = () => {
   const dispatch = useDispatch();

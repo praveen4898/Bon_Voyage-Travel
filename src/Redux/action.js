@@ -1,7 +1,10 @@
 import axios from "axios";
-import { GET_DESTINATION_FAILURE, GET_DESTINATION_REQUEST, GET_DESTINATION_SUCCESS } from "./actiontype";
+import { GET_DESTINATION_FAILURE, GET_DESTINATION_REQUEST, GET_DESTINATION_SUCCESS,GET_BOOKINGS_DATA_REQUEST,GET_BOOKINGS_DATA_SUCCESS,
+GET_BOOKINGS_DATA_FAILURE,DELETE_BOOKINGS_DATA_FAILURE,DELETE_BOOKINGS_DATA_SUCCESS,DELETE_BOOKINGS_DATA_REQUEST } from "./actiontype";
  
 const DestiUrl="https://mockserver-3.onrender.com/locations";
+const bookingUrl = "https://mockserver-3.onrender.com/bookings";
+
 
 export const fetchDestinationRequest = () => ({
     type:GET_DESTINATION_REQUEST,
@@ -16,20 +19,6 @@ export const fetchDestinationRequest = () => ({
     type: GET_DESTINATION_FAILURE,
   });
   
-
-// export const fetchBookingRequest=()=>({
-//   type:GET_BOOKINGS_DATA_REQUEST
-// })
-
-// export const fetchBookingSucess=()=>({
-// type:GET_BOOKINGS_DATA_SUCCESS,
-// payload:booking,
-// })
-
-
-// export const fetchBookingFailure=()=>({
-//   type:GET_BOOKINGS_DATA_FAILURE,
-// })
 
 // Feytching Destination Data
   export const fetchDestinationData = () => {
@@ -46,41 +35,72 @@ export const fetchDestinationRequest = () => ({
     };
   };
 
-  //fetchingbookingdetails
-// export const fetchBookingsData=()=>{
-//   return async (dispatch)=>{
-//     dispatch(fetchBookingRequest)
-//   try {
-//     const response=await axios.get(bookingurl);
-//     let value=response.value
-//     console.log(value)
-//     dispatch(fetchBookingSucess(value))
-//     let data=response.data
-
-//   } catch (error) {
-//   }
-// }
-// }
 
 
 
-// BookingPart
 
-// const fetchBookingRequest= ()=>({type:GET_BOOKINGS_DATA_REQUEST});
-// const fetchBookingSucess= (book)=>({type: GET_BOOKINGS_DATA_SUCCESS, payload:book});
-// const fetchBookingFailure= ()=>({type:GET_BOOKINGS_DATA_FAILURE});
 
-// export const fetchBookingsData = () => {
-//     return async (dispatch) => {
-//       dispatch(fetchBookingRequest());
-//       try {
-//         const response = await axios.get(`${DestiUrl}/booking}`);
-//         let data =response.data
-//          // console.log(data);
-//         dispatch(fetchBookingSucess(data));
-//       } catch (error) {
-//        console.log("Error", error);
-//         dispatch(fetchBookingFailure());
-//       }
-//     };
-//   };
+
+
+////praveenchangessatmrng
+
+export const fetchBookingRequest = () => ({
+  type: GET_BOOKINGS_DATA_REQUEST
+})
+
+export const fetchBookingSucess = (mybooking) => ({
+  type: GET_BOOKINGS_DATA_SUCCESS,
+  payload: mybooking
+})
+
+
+export const fetchBookingFailure = () => ({
+  type: GET_BOOKINGS_DATA_FAILURE,
+})
+
+
+
+export const deleteBookingRequest = () => ({
+  type: DELETE_BOOKINGS_DATA_REQUEST
+})
+
+export const deleteBookingSuccess = (mybooking) => ({
+  type: DELETE_BOOKINGS_DATA_SUCCESS,
+  payload: mybooking
+})
+
+
+export const deleteBookingFailure = () => ({
+  type: DELETE_BOOKINGS_DATA_FAILURE,
+})
+
+
+
+export const fetchBookingsData = (mybooking) => {
+  return async (dispatch) => {
+    dispatch(fetchBookingRequest())
+    try {
+      const res = await axios.get(bookingUrl);
+      let value = res.data
+      console.log(value)
+      dispatch(fetchBookingSucess(value))
+
+    } catch (error) {
+      console.log("Error", error);
+      dispatch(fetchBookingFailure());
+    }
+  }
+}
+
+
+export const deleteBookingData = (id) => {
+  return async (dispatch) => {
+    dispatch(deleteBookingRequest())
+    try {
+      const res = await axios.delete(`https://mockserver-3.onrender.com/bookings/${id}`)
+      dispatch(deleteBookingSuccess(id))
+    } catch (error) {
+      dispatch(deleteBookingFailure())
+    }
+  }
+}

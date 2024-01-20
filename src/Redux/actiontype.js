@@ -13,13 +13,18 @@ export const GET_BOOKINGS_DATA_SUCCESS = "GET_BOOKINGS_DATA_SUCCESS";
 export const GET_BOOKINGS_DATA_FAILURE = "GET_BOOKINGS_DATA_FAILURE";
 
 
+//satmrngchanegspraveen
+
+export const DELETE_BOOKINGS_DATA_REQUEST = "DELETE_BOOKINGS_DATA_REQUEST";
+export const DELETE_BOOKINGS_DATA_SUCCESS = "DELETE_BOOKINGS_DATA_SUCCESS";
+export const DELETE_BOOKINGS_DATA_FAILURE = "DELETE_BOOKINGS_DATA_FAILURE";
+
+
+
+
+
 //from admin, they can addnew packages to the existing choices
 export const ADD_DATA_REQUEST = "ADD_DATA_REQUEST";
 export const ADD_DATA_SUCCESS = "ADD_DATA_SUCCESS";
 export const ADD_DATA_FAILURE = "ADD_DATA_FAILURE";
 
-
-//in the booking page if they want to delete the booking of a package
-export const DELETE_DATA_REQUEST = "DELETE_DATA_REQUEST";
-export const DELETE_DATA_SUCCESS = "DELETE_DATA_SUCCESS";
-export const DELETE_DATA_FAILURE = "DELETE_DATA_FAILURE";
