@@ -1,25 +1,28 @@
+
 import axios from 'axios';
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-
-///////////
-
 import {
-  Button, Box, Center, Grid, GridItem, border, Alert,
+  Button,
+  Box,
+  Flex,
+  Alert,
   AlertIcon,
   AlertTitle,
-  AlertDescription, CloseButton
+  AlertDescription,
+  CloseButton,
+  Heading,
+  Text,
+  Image,
 } from '@chakra-ui/react';
 
-//////////////////
-
-const url="https://mockserver-3.onrender.com/locations"
-const bookingurl="https://mockserver-3.onrender.com/bookings"
+const url = "https://mockserver-3.onrender.com/locations";
+const bookingurl = "https://mockserver-3.onrender.com/bookings";
 
 const Singledestination = () => {
-
-
   const [isAlertVisible, setAlertVisible] = useState(false);
+  const [timer, setTimer] = useState(60 * 60); // 60 minutes in seconds
+
   const handleBookNowClick = () => {
     setAlertVisible(true);
   };
@@ -28,127 +31,145 @@ const Singledestination = () => {
     setAlertVisible(false);
   };
 
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+  const [singleData, setSingleData] = useState(null);
+  const [error, setError] = useState(null);
 
-//////////////////////////////////////////////
-
-
-
-    const { id } = useParams();
-    const navigate = useNavigate();
-    const [isLoading, setIsLoading] = useState(true);
-    const [singleData, setSingleData] = useState(null);
-    const [error, setError] = useState(null);
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const res = await axios.get(`${url}/${id}`);
-          const data = res.data;
-          console.log(data);
-          setSingleData(data);
-          setIsLoading(false);
-        } catch (error) {
-          console.log("Error", error);
-          setError(error);
-          setIsLoading(false);
-        }
-      };
-  
-      fetchData();
-    }, [id]);
-
-    const handleBooking = async () => {
-        try {
-          await axios.post(bookingurl, {
-            location: singleData.location,
-            description: singleData.description,
-            image: singleData.image,
-            price: singleData.price,
-            ID: singleData.id,
-          });
-          console.log("bookingsuccess")
-          navigate("/booking");
-        } catch (error) {
-          console.log("Error", error);
-        }
-      };
-    
-    if (isLoading) {
-        return <h3>Loding....</h3>;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`${url}/${id}`);
+        const data = res.data;
+        setSingleData(data);
+        setIsLoading(false);
+      } catch (error) {
+        setError(error);
+        setIsLoading(false);
       }
-    
-      if (error) {
-        return <h1 className="loading_indicator">Error loading tour details</h1>;
-      }
-    
+    };
 
-      return (
-        <>
-          <div>
+    fetchData();
+  }, [id]);
 
-<Grid templateColumns='1fr repeat(2, 1fr)'
-        gap={10}
-        padding={30}
-        alignItems="Center"
-        justifyItems="Center"
-      >
-        <GridItem>
-          <Box>
-            <img   width={"100%"} height={"100%"} style={{ border: '2px solid black' }} src={singleData.image} alt="" />
-          </Box>
-        </GridItem>
+  const handleBooking = async () => {
+    try {
+      await axios.post(bookingurl, {
+        location: singleData.location,
+        description: singleData.description,
+        image: singleData.image,
+        price: singleData.price,
+        ID: singleData.id,
+      });
+      navigate("/booking");
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
 
+  useEffect(() => {
+    // Start the timer countdown
+    const timerInterval = setInterval(() => {
+      setTimer((prevTimer) => (prevTimer > 0 ? prevTimer - 1 : 0));
+    }, 1000);
 
-        <GridItem>
-          <Box backgroundColor="grey" p={4}>
-            <Grid templateColumns={['1fr', '1fr 1fr', '1fr 1fr 1fr']} gap={5}>
-              <GridItem justifySelf="center" alignSelf="center" colSpan={3} h="auto" >
-                <b>Location:{singleData.location}</b>
-              </GridItem>
-              <GridItem justifySelf="center" alignSelf="center" colSpan={3} h='auto'>
-                <b>Country:{singleData.country}</b>
-              </GridItem>
-              <GridItem justifySelf="center" alignSelf="center" colSpan={3} h='auto'>
-                <b>Description:{singleData.description}</b><p> </p>
-              </GridItem>
-              <GridItem justifySelf="center" alignSelf="center" colSpan={3} h='auto'>
-                <b>Price:{singleData.price}</b>
-              </GridItem>
-            </Grid>
-          </Box>
-        </GridItem>
+    // Clear the interval when the component is unmounted
+    return () => clearInterval(timerInterval);
+  }, []);
 
+  if (isLoading) {
+    return <h3>Loading....</h3>;
+  }
 
-      </Grid>
-      <Box><Button onClick={handleBookNowClick} colorScheme='blue' _hover={{ bg: 'blue.800' }}>Add To Booking</Button></Box>
-      <br />
+  if (error) {
+    return <h1>Error loading tour details</h1>;
+  }
 
-      
+  return (
+    <Box
+      maxWidth="800px"
+      margin="auto"
+      padding="20px"
+      boxShadow="lg"
+      borderRadius="md"
+      marginTop="50px"
+      backgroundColor="gray.100" // Set the background color for the entire box
+    >
+      <Flex direction={['column', 'row']} align="center">
+        <Box width={['100%', '50%']} pr={[0, 4]}>
+          <Image
+            width="100%"
+            height="100%"
+            style={{ border: '2px solid black' }}
+            src={singleData.image}
+            alt=""
+          />
+        </Box>
+
+        <Box width={['100%', '50%']} p={4} borderRadius="md">
+          <Heading mb={2} size="lg">
+            {singleData.location}
+          </Heading>
+          <Text fontSize="sm" color="gray.500" mb={4}>
+            {singleData.country}
+          </Text>
+          <Text>{singleData.description}</Text>
+          <Text mt={4} fontWeight="bold">
+            Price: {singleData.price}
+          </Text>
+        </Box>
+      </Flex>
+
+      <Box mt={4} textAlign="center">
+        <Text mt={2} mb={4}> {/* Add margin-bottom to create space between text and button */}
+          {timer > 0 ? (
+            `Book now and get 15% off! (Offer ends in ${Math.floor(timer / 60)}:${timer % 60} minutes)`
+          ) : (
+            'Book now and get 15% off!'
+          )}
+        </Text>
+        <Button
+          onClick={handleBookNowClick}
+          colorScheme='blue'
+          _hover={{ bg: 'blue.800' }}
+          mt={2} // Add margin-top to create space between text and button
+        >
+          Add To Booking
+        </Button>
+      </Box>
+
       {isAlertVisible && (
-        <Alert >
+        <Alert mt={6}>
           <AlertIcon />
           <Box textAlign="center">
             <AlertTitle>Added!</AlertTitle>
             <AlertDescription>
-              Your Favourite  package has been added to Bookings
-              <br />Few more steps to Take Off!!!!!
-              <br />
-              <Button colorScheme='blue' _hover={{ bg: 'blue.800' }} onClick={handleBooking}>Go To Booking</Button>
+              Your favorite package has been added to Bookings
+              <br />Few more steps to take off!
             </AlertDescription>
+            <Box>
+            <Button
+              colorScheme='blue'
+              _hover={{ bg: 'blue.800' }}
+              onClick={handleBooking}
+              mt={4}
+            >
+              Go To Booking
+            </Button>
+            </Box>
           </Box>
           <CloseButton
             alignSelf='flex-start'
             position='relative'
-            right={-1}
-            top={-1}
+            right={-2}
+            top={-2}
             onClick={handleAlertClose}
           />
         </Alert>
       )}
-          </div>
-        </>
-      );
-    };
-    
+    </Box>
+  );
+};
 
-export default Singledestination
+export default Singledestination;
