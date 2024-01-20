@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { deleteBookingData, fetchBookingsData } from '../Redux/action';
 import { Box, Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Button } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
+import FooterSection from '../Components/Footer';
 
 const Bookingpage = () => {
   const dispatch = useDispatch();
@@ -83,11 +84,15 @@ const handleNavi=()=>{
           ))}
         </div>
       )}
-      <Box>
+      <Box
+      margin="30px">
 
 
         <Button colorScheme='blue' _hover={{ bg: 'blue.800' }} onClick={handleNavi} >Proceed to Payment</Button>
       </Box>
+      <Box>
+  <FooterSection />
+</Box>
     </div>
 
 
