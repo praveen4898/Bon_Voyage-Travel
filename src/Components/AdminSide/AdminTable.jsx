@@ -67,7 +67,7 @@ const handleDelete=(postId)=>{
   return (<>
       <AddLocations />
       <Spacer/>
-    <TableContainer p={'5'}>
+    <TableContainer p={'5'}  >
     <Table variant='striped' colorScheme={'blue'} >
       <TableCaption>Locations Available</TableCaption>
       <Thead>
@@ -80,7 +80,7 @@ const handleDelete=(postId)=>{
           <Th>Action</Th>
         </Tr>
       </Thead>
-      <Tbody>
+      <Tbody >
        { data.map(item=>{
         return (
           <Tr key={item.id} >

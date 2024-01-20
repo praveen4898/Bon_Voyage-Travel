@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Spacer } from '@chakra-ui/react'
 import { fetchDestinationData } from '../Redux/action';
 import Users from '../Components/AdminSide/Users';
+import SmallScreenCard from '../Components/AdminSide/SmallScreenCard';
 
 
 
@@ -71,7 +72,7 @@ import Users from '../Components/AdminSide/Users';
   </TabPanels>
 </Tabs>
         
-
+{/* <SmallScreenCard/> */}
     </Box>
   )
 }
