@@ -1,96 +1,3 @@
-// import React, { useEffect, useState } from 'react'
-// import {
-//   Button, Box, Center, Grid, GridItem, border, Alert,
-//   AlertIcon,
-//   AlertTitle,
-//   AlertDescription, CloseButton
-// } from '@chakra-ui/react';
-
-
-
-
-// const Singledestination = ({ el }) => {
-//   const [isAlertVisible, setAlertVisible] = useState(false);
-//   const handleBookNowClick = () => {
-//     setAlertVisible(true);
-//   };
-
-//   const handleAlertClose = () => {
-//     setAlertVisible(false);
-//   };
-
-
-//   return (
-//     <div>
-//       <Grid templateColumns='1fr repeat(2, 1fr)'
-//         gap={10}
-//         padding={30}
-//         alignItems="Center"
-//         justifyItems="Center"
-//       >
-//         <GridItem>
-//           <Box>
-//             <img width={"100%"} height={"100%"} style={{ border: '2px solid black' }} src="" alt="" />
-//           </Box>
-//         </GridItem>
-
-
-//         <GridItem>
-//           <Box backgroundColor="grey" p={4}>
-//             <Grid templateColumns={['1fr', '1fr 1fr', '1fr 1fr 1fr']} gap={5}>
-//               <GridItem justifySelf="center" alignSelf="center" colSpan={3} h="auto" >
-//                 <b>Location:</b>
-//               </GridItem>
-//               <GridItem justifySelf="center" alignSelf="center" colSpan={3} h='auto'>
-//                 <b>Country:</b>
-//               </GridItem>
-//               <GridItem justifySelf="center" alignSelf="center" colSpan={3} h='auto'>
-//                 <b>Description:</b><p> </p>
-//               </GridItem>
-//               <GridItem justifySelf="center" alignSelf="center" colSpan={3} h='auto'>
-//                 <b>Price:</b>
-//               </GridItem>
-//             </Grid>
-//           </Box>
-//         </GridItem>
-
-
-//       </Grid>
-//       <Box><Button onClick={handleBookNowClick} colorScheme='blue' _hover={{ bg: 'blue.800' }}>Add To Booking</Button></Box>
-//       <br />
-
-      
-//       {isAlertVisible && (
-//         <Alert >
-//           <AlertIcon />
-//           <Box textAlign="center">
-//             <AlertTitle>Added!</AlertTitle>
-//             <AlertDescription>
-//               Your Favourite  package has been added to Bookings
-//               <br />Few more steps to Take Off!!!!!
-//               <br />
-//               <Button colorScheme='blue' _hover={{ bg: 'blue.800' }}>Go To Booking</Button>
-//             </AlertDescription>
-//           </Box>
-//           <CloseButton
-//             alignSelf='flex-start'
-//             position='relative'
-//             right={-1}
-//             top={-1}
-//             onClick={handleAlertClose}
-//           />
-//         </Alert>
-//       )}
-
-//     </div>
-//   )
-// }
-
-// export default Singledestination
-
-
-
-
 import axios from 'axios';
 import React, { useState,useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
@@ -178,19 +85,6 @@ const Singledestination = () => {
       return (
         <>
           <div>
-            {/* <img  src={singleData.image} alt="Tour" />
-            <h3 >Location: {singleData.location}</h3>
-            <h4 >Country: {singleData.country}</h4>
-            <p >{singleData.description}</p>
-            <h4 >Price: {singleData.price}</h4>
-    
-            <div>
-              <button  onClick={handleBooking}>
-                Book Now
-              </button>
-            </div> */}
-
-
 
 <Grid templateColumns='1fr repeat(2, 1fr)'
         gap={10}
@@ -226,7 +120,7 @@ const Singledestination = () => {
 
 
       </Grid>
-      <Box><Button onClick={()=>{handleBookNowClick();handleBooking()}} colorScheme='blue' _hover={{ bg: 'blue.800' }}>Add To Booking</Button></Box>
+      <Box><Button onClick={handleBookNowClick} colorScheme='blue' _hover={{ bg: 'blue.800' }}>Add To Booking</Button></Box>
       <br />
 
       
@@ -239,7 +133,7 @@ const Singledestination = () => {
               Your Favourite  package has been added to Bookings
               <br />Few more steps to Take Off!!!!!
               <br />
-              <Button colorScheme='blue' _hover={{ bg: 'blue.800' }}>Go To Booking</Button>
+              <Button colorScheme='blue' _hover={{ bg: 'blue.800' }} onClick={handleBooking}>Go To Booking</Button>
             </AlertDescription>
           </Box>
           <CloseButton
