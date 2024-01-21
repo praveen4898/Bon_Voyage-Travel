@@ -73,7 +73,7 @@ const handleNavi=()=>{
                   </CardBody>
 
                   <CardFooter>
-                    <Button onClick={() => handleDeleteBooking(item.id)} variant='solid' colorScheme='blue'>
+                    <Button onClick={() => handleDeleteBooking(item.id)} variant='solid' colorScheme='teal'>
                       DELETE
                     </Button>
                   </CardFooter>
@@ -88,7 +88,7 @@ const handleNavi=()=>{
       margin="30px">
 
 
-        <Button colorScheme='blue' _hover={{ bg: 'blue.800' }} onClick={handleNavi} >Proceed to Payment</Button>
+        <Button colorScheme='blue' _hover={{ bg: 'teal.800' }} onClick={handleNavi} >Proceed to Payment</Button>
       </Box>
       <Box>
   

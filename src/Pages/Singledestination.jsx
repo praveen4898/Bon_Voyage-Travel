@@ -129,7 +129,7 @@ const Singledestination = () => {
           <Heading mb={2} size="lg">
             {singleData.location}
           </Heading>
-          <Text fontSize="sm" color="gray.500" mb={4}>
+          <Text fontSize="lg" color="black.500" mb={4}>
             {singleData.country}
           </Text>
           <Text>{singleData.description}</Text>
@@ -149,8 +149,8 @@ const Singledestination = () => {
         </Text>
         <Button
           onClick={handleBookNowClick}
-          colorScheme='blue'
-          _hover={{ bg: 'blue.800' }}
+          colorScheme='teal'
+          _hover={{ bg: 'teal.800' }}
           mt={2} // Add margin-top to create space between text and button
         >
           Add To Booking
@@ -168,8 +168,8 @@ const Singledestination = () => {
             </AlertDescription>
             <Box>
             <Button
-              colorScheme='blue'
-              _hover={{ bg: 'blue.800' }}
+              colorScheme='teal'
+              _hover={{ bg: 'teal.800' }}
               onClick={handleBooking}
               mt={4}
             >
