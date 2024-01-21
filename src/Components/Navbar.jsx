@@ -151,6 +151,7 @@ export const Navbar = () => {
 
           {!isSmallerThan768 && (
             <Stack direction='row' spacing={2}>
+              <ChakraLink as={Link} to='/signup'>
               <Button
                 leftIcon={<FaUserInjured />}
                 colorScheme='#159895'
@@ -160,6 +161,8 @@ export const Navbar = () => {
               >
                 SignUp
               </Button>
+              </ChakraLink>
+              <ChakraLink as={Link} to='/login'>
               <Button
                 leftIcon={<FaUserInjured />}
                 colorScheme='gray'
@@ -169,6 +172,7 @@ export const Navbar = () => {
               >
                 Login
               </Button>
+              </ChakraLink>
             </Stack>
           )}
         </Flex>
