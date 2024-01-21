@@ -53,11 +53,11 @@ const Reviews = () => {
         review:
         'Bon Voyage made our trip to Malaysia an exploration of cultural richness and natural beauty. Navigating through the vibrant streets of Kuala Lumpur and the lush rainforests of Borneo was effortless with their guidance. Their commitment to delivering a memorable travel experience was evident in every detail. Terima kasih, Bon Voyage!'
       }
-  ];
+  ]
 
   return (
     <Box mb="5">
-      <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={4}>
+      <SimpleGrid justifyItems="centr" alignItems="center" columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={4}>
         {reviewsData.map((review, index) => (
           <Card
             key={index}
