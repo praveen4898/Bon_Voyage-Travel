@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import "../CSS/signup.css"
+import "../CSS/login.css"
 
 
 export const Loginform = () => {
@@ -36,7 +36,7 @@ export const Loginform = () => {
                     Username
                     <br />
                     <input
-                        className='username'
+                        className='usernamelogin'
                         type="text"
                         name="username"
                         placeholder='Username'
@@ -49,7 +49,7 @@ export const Loginform = () => {
                     Password
                     <br />
                     <input
-                        className='password'
+                        className='passwordlogin'
                         type="password"
                         name="password"
                         placeholder='password'
