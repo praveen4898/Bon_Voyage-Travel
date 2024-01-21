@@ -42,7 +42,7 @@ const FirstDiv = () => {
           Travel around the world
         </Heading>
         <Heading as='h2' size='lg' color="white" fontFamily="poppins" fontWeight="bold">
-          Trusted by 80 million Travelers, Aalcazar is the world's most competitive travel,
+          Trusted by 80 million Travelers, Bon_Voyage is the world's most competitive travel,
         </Heading>
         <Heading as='h2' size='lg' color="white" fontFamily="poppins" fontWeight="bold">
           flight and accommodation provider, very easy to access on your smart tree and desktop
