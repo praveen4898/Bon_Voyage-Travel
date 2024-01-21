@@ -1,7 +1,15 @@
-.signup { 
+.signup {
+    width: 100%;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    background-image: url("../Image/login.jpg");
+    background-size: cover;
+}
+
+.subsignup {
     width: 370px;
     height: 485px;
-    margin:60px auto 60px auto;
+    margin: auto;
     background-color: #159895;
     border-radius: 18px;
 }
