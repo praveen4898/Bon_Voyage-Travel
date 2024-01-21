@@ -150,7 +150,7 @@ export const Navbar = () => {
           )}
 
           {!isSmallerThan768 && (
-            <Stack direction='row' spacing={2}>
+            <Stack direction='row' spacing={2} marginRight="-100">
               <Button
                 leftIcon={<FaUserInjured />}
                 colorScheme='#159895'

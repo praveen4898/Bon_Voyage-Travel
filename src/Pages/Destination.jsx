@@ -1,18 +1,23 @@
 // Destination.js
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom'; // Import useLocation
 import { fetchDestinationData } from '../Redux/action';
 import { SingleDesti } from './Destinationcard';
 import { Box, Button, Select, HStack, Center } from '@chakra-ui/react';
 
-const Destination = ({ searchInput }) => {
+const Destination = () => {
   const dispatch = useDispatch();
   const { isloading, iserror, destination } = useSelector((state) => state);
   const [filteredTours, setFilteredTours] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8; 
+  const itemsPerPage = 8;
   const [sortOrder, setSortOrder] = useState('');
   const [selectedCountry, setSelectedCountry] = useState('');
+
+  // Use useLocation to get the query parameter
+  const location = useLocation();
+  const searchInput = new URLSearchParams(location.search).get('country');
 
   useEffect(() => {
     dispatch(fetchDestinationData());
@@ -45,16 +50,13 @@ const Destination = ({ searchInput }) => {
   }, [filteredTours, sortOrder, selectedCountry]);
 
   useEffect(() => {
-   
     if (searchInput) {
-      const filtered = destination.filter((tour) => {
-        
-        return tour.country.toLowerCase().includes(searchInput.toLowerCase());
-      });
+      const filtered = destination.filter((tour) =>
+        tour.country.toLowerCase().includes(searchInput.toLowerCase())
+      );
       setFilteredTours(filtered);
     }
   }, [searchInput, destination]);
-
 
   useEffect(() => {
     setSelectedCountry('');
@@ -77,7 +79,7 @@ const Destination = ({ searchInput }) => {
     return uniqueCountries;
   };
 
-  return (
+ return (
     <Box>
       <Box>
         {isloading ? (
@@ -114,9 +116,10 @@ const Destination = ({ searchInput }) => {
               </HStack>
             </Center>
 
-            <Box data-cy="tour-list" className="tour-list" mt="10" style={{ marginLeft: '90px' }}>
+            <Box data-cy="tour-list" className="tour-list" mt="10" style={{ marginLeft: '90px' }} >
               <Box
-                style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', justifyContent: 'center' }}
+              gridTemplateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(4, 1fr)'}}
+                style={{ display: 'grid'  , gap: '16px', justifyContent: 'center' }}
               >
                 {currentItems.map((item) => (
                   <SingleDesti key={item.id} tour={item} />
@@ -124,7 +127,7 @@ const Destination = ({ searchInput }) => {
               </Box>
 
               <Center mt={4}>
-                <HStack spacing={4} mt={3} mb={3}>
+                <HStack spacing={4} mt={3} mb={3} ml={-20}>
                   <Button onClick={prevPage} disabled={currentPage === 1} border="1px solid teal" colorScheme="teal">
                     Previous
                   </Button>
@@ -145,5 +148,6 @@ const Destination = ({ searchInput }) => {
     </Box>
   );
 };
+
 
 export default Destination;
