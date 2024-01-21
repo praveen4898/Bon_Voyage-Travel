@@ -11,7 +11,7 @@ Bon Voyage, your ultimate online vacation booking destination, is designed to tr
 ## Features
 "The Bon Voyage project encompasses a comprehensive set of features to enhance your travel experience:
 
-## User Registration and Authentication:
+### User Registration and Authentication:
 Create your personalized account on Bon Voyage for a seamless booking experience.
 Secure authentication to safeguard your personal information.
 Package Filtering:
