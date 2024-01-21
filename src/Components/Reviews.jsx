@@ -61,6 +61,7 @@ const Reviews = () => {
 
   return (
     <Box mx="auto" maxW="1200px" mb="5" px="4">
+      <h2 style={{color:"black", fontSize:"30px", fontWeight:"bolder" , padding:"5px"}}>Testimonials</h2>
     <SimpleGrid columns={{ base: 1, sm: 2, md: 2, lg: 2 }} spacing={8}>
       {reviewsData.map((review, index) => (
         <Card
