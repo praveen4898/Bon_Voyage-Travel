@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "../CSS/login.css"
+
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../Redux/action';
 import {useNavigate} from 'react-router-dom';
 import { useToast } from '@chakra-ui/react';
+
+
+
+
 export const Loginform = () => {
     const [formData, setFormData] = useState({
         email: '',
@@ -76,7 +81,7 @@ export const Loginform = () => {
                     Password
                     <br />
                     <input
-                        className='password'
+                        className='passwordlogin'
                         type="password"
                         name="password"
                         placeholder='password'
