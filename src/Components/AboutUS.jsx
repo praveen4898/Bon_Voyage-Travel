@@ -67,7 +67,7 @@ const AboutUs = () => {
       </div>
 
       {/* Frequently Asked Questions Section */}
-      <section className="faq" style={{ margin: '5%', color: 'black' }}>
+      <section className="faq" style={{ margin: '5%', color: 'black',textAlign:'left' }}>
         <h2 style={{ textAlign: 'center', fontSize:"50px", fontFamily:"bolder" }}>Frequently Asked Questions (FAQs)</h2>
         <hr />
         <ul>

@@ -116,6 +116,7 @@ const Reviews = () => {
             height="150px"
             borderRadius={"20px"}
             p={2}
+            
           />
           <CardFooter
             justify="space-between"

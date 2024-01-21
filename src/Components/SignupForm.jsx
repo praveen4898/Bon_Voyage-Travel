@@ -11,9 +11,8 @@ import { useNavigate } from 'react-router-dom';
 
 export const SignupForm = () => {
     const [formData, setFormData] = useState({
-        firstname:'',
-        lastname:'',
-
+        firstName:'',
+        lastName:'',
         email: '',
         password: '',
     });
@@ -52,12 +51,9 @@ console.log(users)
                     <input
                         className='username'
                         type="text"
-
                         name="firstName"
                         placeholder='First name'
                         value={formData.firstName}
-
-
                         onChange={handleChange}
                     />
                 </label>

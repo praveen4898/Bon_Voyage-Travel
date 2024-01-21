@@ -24,6 +24,7 @@ const PopularPlaces = () => {
               p={4}
               h='30%'
               style={{ boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}
+              isLazy
             />
             <Text textAlign='center' fontSize='xl' fontWeight='bold' mt='2'>
               Australia
@@ -39,6 +40,7 @@ const PopularPlaces = () => {
               p={4}
               h='30%'
               style={{ boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}
+              isLazy
             />
             <Text textAlign='center' fontSize='xl' fontWeight='bold' mt='2'>
               Japan
@@ -54,6 +56,7 @@ const PopularPlaces = () => {
               p={4}
               h='30%'
               style={{ boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}
+              isLazy
             />
             <Text textAlign='center' fontSize='xl' fontWeight='bold' mt='2'>
               Italy

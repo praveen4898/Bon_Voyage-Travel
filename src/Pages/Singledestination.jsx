@@ -122,6 +122,7 @@ const Singledestination = () => {
             height="100%"
             src={singleData.image}
             alt=""
+            isLazy
           />
         </Box>
 

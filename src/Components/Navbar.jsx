@@ -18,11 +18,13 @@ import {
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { FaUserInjured, FaBars } from 'react-icons/fa';
-
+import { useSelector } from 'react-redux';
 export const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isSmallerThan768] = useMediaQuery('(max-width: 767px)');
-
+  // const { isloading, iserror, destination } = useSelector((state) => state);
+  const users=useSelector((state)=>state.users)
+  console.log(users);
   return (
     <Box style={{ backgroundColor: '#159895', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', padding: '10px 20px' }}>
       <Flex maxWidth='container.xl' alignItems='center' justify='space-between'>
@@ -86,7 +88,7 @@ export const Navbar = () => {
                       <ChakraLink
                         as={Link}
                         to='/about'
-                        style={{ textDecoration: 'none', color: 'gray.600' }}
+                        style={{ textDecoration: 'none', color: 'gray.600', whiteSpace:'nowrap'}}
                         onClick={onClose}
                       >
                         About Us
@@ -150,7 +152,9 @@ export const Navbar = () => {
           )}
 
           {!isSmallerThan768 && (
-            <Stack direction='row' spacing={2}>
+            // users.length==0? login :user
+            users.length==0?
+           ( <Stack direction='row' spacing={2}>
               <ChakraLink as={Link} to='/signup'>
               <Button
                 leftIcon={<FaUserInjured />}
@@ -173,7 +177,10 @@ export const Navbar = () => {
                 Login
               </Button>
               </ChakraLink>
-            </Stack>
+            </Stack>)
+            :(<Box bg="white" style={{whiteSpace:'nowrap'}} p='2%' borderRadius={'50%'}>
+              {`${users[0].firstName.charAt(0).toUpperCase()} ${users[0].lastName.charAt(0).toUpperCase()}` }
+              </Box>)
           )}
         </Flex>
       </Flex>
