@@ -3,7 +3,7 @@ import { Box } from '@chakra-ui/react';
 
 const PopularPlaces = () => {
   return (
-    <Box marginTop="100px">
+    <Box marginTop="50px">
       Popular Places To Visit
     </Box>
   );
