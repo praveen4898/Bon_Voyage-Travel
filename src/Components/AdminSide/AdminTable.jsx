@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import {
     Table,
     Thead,
@@ -31,43 +31,44 @@ import AddLocations from './AddLocations';
     try {
         let res= await axios.delete(`https://mockserver-3.onrender.com/locations/${id}`);
         
-        console.log(res.data)
         console.log(id)
     } catch (error) {
         console.log(error)
     }
 }
 
+
+const MemoizedAddLocations = React.memo(AddLocations);
+
 export const AdminTable = ({props}) => {
   const [data,setData]=useState(props);
  
-  // useEffect(()=>{
-  //   setData(props)
-  //  },[data])
+  useEffect(()=>{
+    setData(props)
+   },[data])
 
   const handleSortCountry=(e)=>{
-  e.preventDefault();
-  const sortedByCountry=data.sort((a,b)=>{return (b.country).localeCompare(a.country)});
+  // e.preventDefault();
+  // const sortedByCountry=data.sort((a,b)=>{return (b.country).localeCompare(a.country)});
 
-  setData(sortedByCountry);
-  console.log(sortedByCountry)
-  console.log("clicked")
+  // setData(sortedByCountry);
+  // console.log(sortedByCountry)
+  // console.log("clicked")
 }
 // console.log("sorted",sortedById)
 
 
-const handleDelete=(postId)=>{
+const handleDelete=useCallback((postId)=>{
   DeleteLocation(postId);
   const x=data.filter((e)=>e.id!=postId)
-  console.log(x)
   setData(x)
 
-}
+},[])
 
   return (<>
-      <AddLocations />
+      <MemoizedAddLocations  />
       <Spacer/>
-    <TableContainer p={'5'}  >
+    <TableContainer p={'5'} >
     <Table variant='striped' colorScheme={'blue'} >
       <TableCaption>Locations Available</TableCaption>
       <Thead>
@@ -83,13 +84,14 @@ const handleDelete=(postId)=>{
       <Tbody >
        { data.map(item=>{
         return (
-          <Tr key={item.id} >
+          <Tr key={item.id}  >
           <Td >
             <Image
               boxSize='100px'
               objectFit='cover'
               src={item.image}
               alt={item.location}
+              loading='lazy'
             />
           </Td>
           <Td>{item.country}</Td>

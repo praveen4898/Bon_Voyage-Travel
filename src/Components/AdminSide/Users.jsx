@@ -14,19 +14,16 @@ import {
   } from '@chakra-ui/react'
 import axios from 'axios';
 
-  async function DeleteUser(id){
-    try {
-        let res= await axios.delete(`https://mockserver-3.onrender.com/users/${id}`);
-        
-        console.log(res.data)
-        console.log(id)
-    } catch (error) {
-        console.log(error)
-    }
-}
 
-const Users = ({props}) => {
 
+const Users = ({props,onDelete}) => {
+
+  const handleDelete=(Id)=>{
+    // DeleteUser(Id);
+    onDelete(Id);
+    console.log('user deleted')
+    
+  }
     
   return (
     <TableContainer p={'10'}>
@@ -51,7 +48,7 @@ const Users = ({props}) => {
           <Td>{item.password}</Td>
          
           <Td><Button colorScheme='red' 
-        //   onClick={()=>handleDelete(item.id)} 
+          onClick={()=>handleDelete(item.id)} 
           >Delete</Button></Td>
         </Tr>
        

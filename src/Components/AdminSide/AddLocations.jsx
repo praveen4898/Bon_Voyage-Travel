@@ -17,6 +17,14 @@ import {
     useToast,
   } from '@chakra-ui/react'
 import axios from 'axios'
+async function postLocations(cred){
+  try {
+     let res= await axios.post("https://mockserver-3.onrender.com/locations",cred);
+
+ } catch (error) {
+     console.log(error)
+ }
+}
 
 const AddLocations = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -24,39 +32,29 @@ const AddLocations = () => {
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
   
-  const [price,setPrice]=useState(0);
-  const [location,setLocation]=useState("");
-  const [country,setCountry]=useState("");
-  const [image,setImg]=useState("");
-  const [description,setDesc]=useState("");
+    const [price,setPrice]=useState('');
+    const [location,setLocation]=useState("");
+    const [country,setCountry]=useState("");
+    const [image,setImg]=useState("");
+    const [description,setDesc]=useState("");
 
-  const toast = useToast()
+    const toast = useToast()
 
-console.log(price,location,country,image,description)
+    const handleSubmit=()=>{
+      
+        postLocations({image,location,country,price,description})
+        console.log("data added sucessfully");
 
-const handleSubmit=()=>{
-  async function postLocations(cred){
-    try {
-       let res= await axios.post("https://mockserver-3.onrender.com/locations",cred);
-       // console.log(res.data);
-       
-   } catch (error) {
-       console.log(error)
-   }
-}
-postLocations({image,location,country,price,description})
-console.log("data posted sucessfully");
-
-toast({
-  title: 'Location Added',
-  description: "We've added new location",
-  status: 'success',
-  duration: 5000,
-  isClosable: true,
-  position: 'top-center',
-})
-onClose()
-}
+        toast({
+          title: 'Location Added',
+          description: "We've added new location",
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+          position: 'top-center',
+        })
+        onClose()
+      }
 
   return (
     
