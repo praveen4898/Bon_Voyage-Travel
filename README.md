@@ -43,3 +43,24 @@ Bon Voyage values user input and is committed to addressing any concerns promptl
 Admin interface for adding and managing diverse travel offerings.
 Keep the catalog dynamic and ever-expanding with new and exciting packages.
 
+
+
+## Deployment
+
+
+
+## Tech Stack
+HTML/CSS: Used for structuring and styling the user interface.
+JavaScript:Used for scripting logic on both the frontend (React).
+React.js: A JavaScript library for building user interfaces, providing a dynamic and interactive experience.
+Chakra UI: A React component library for quickly building accessible and responsive user interfaces.
+
+
+## Screenshot of Website
+
+
+
+
+
+
+
