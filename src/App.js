@@ -9,13 +9,14 @@ function App() {
   const state=useSelector(state=>state);
   console.log("state",state);
 
-
+  
 
   const mail='admin@gmail.co';
   return (
     <div className="App">
      { (mail==='admin@gmail.com')?<Allroutes />:
      <>
+    
        <Navbar/>
       <Allroutes />
       <FooterSection />
