@@ -134,11 +134,11 @@ export const loginUser=(formData)=>(dispatch)=>{
 
  
   dispatch({type:LOGIN_REQUEST})
-  axios.get('https://mockserver-3.onrender.com/users',formData)
+  axios.get('https://mockserver-3.onrender.com/users')
   .then((res)=>{
     console.log(res.data)
   let allow=res.data.find((el)=>
-el.username==formData.username && el.password==formData.password 
+el.email==formData.email && el.password==formData.password 
   )
 console.log(allow)
 
