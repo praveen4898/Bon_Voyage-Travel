@@ -1,55 +1,255 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+// import React, { useEffect } from 'react'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { deleteBookingData, fetchBookingsData } from '../Redux/action';
+// import { Box, Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Button } from '@chakra-ui/react'
+// import { useNavigate } from 'react-router-dom';
+// // import FooterSection from '../Components/Footer';
+
+// const Bookingpage = () => {
+//   const dispatch = useDispatch();
+//   const { isloading, iserror, mybooking } = useSelector((state) => state)
+//   console.log(mybooking)
+
+
+//   useEffect(() => {
+//     dispatch(fetchBookingsData())
+//   }, [dispatch])
+
+
+
+//   const handleDeleteBooking = (id) => {
+//     dispatch(deleteBookingData(id))
+//   }
+// const navigate=useNavigate()
+// // const handleNavi=()=>{
+// //   navigate("/payment")
+// // }
+// const handleNavi = (item) => {
+//   navigate("/payment", { state: { amount: item.price } });
+// };
+
+
+//   return (
+//     <div>Bookingpage
+
+//       {isloading ? (
+
+//         <h3>Loading....</h3>
+//       ) : iserror ? (
+//         <h1 >Error loading booking details</h1>
+//       ) : mybooking.length === 0 ? (
+//         <h2 >No tours booked yet !</h2>
+//       ) : (
+//         <div>
+//           {mybooking.map((item, index) => (
+//             <div key={item.id} className="booking-card"
+//             >
+//               <Card
+//                 direction={{ base: 'column', sm: 'row' }}
+//                 overflow='hidden'
+//                 variant='outline'
+//                 style={{
+//                   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+//                   backgroundColor: index % 2 === 0 ? '#EDEDED' : '#FFFFFF', // Set your background colors
+//                 }}
+
+
+//               >
+//                 <Image
+//                   objectFit='cover'
+//                   maxW={{ base: '100%', sm: '200px' }}
+//                   src={item.image}
+//                   alt='Caffe Latte'
+//                 />
+
+
+//                 <Stack align="left" justify="center">
+//                   <CardBody>
+//                     <Heading size='md'>{item.location}</Heading>
+
+
+//                     <Box py='2'>
+//                       <Text align="left">{item.country}</Text>
+//                     </Box>
+//                     <Box py='2'>
+//                       <Text align="left">Price(INR):{item.price}</Text>
+//                     </Box>
+//                   </CardBody>
+
+//                   <CardFooter>
+//                     <Button onClick={() => handleDeleteBooking(item.id)} variant='solid' colorScheme='teal'>
+//                       DELETE
+//                     </Button>
+//                   </CardFooter>
+//                 </Stack>
+//               </Card>
+//             </div>
+
+//           ))}
+//         </div>
+//       )}
+//       <Box
+//       margin="30px">
+
+
+//         <Button colorScheme='blue' _hover={{ bg: 'teal.800' }}  onClick={() => handleNavi(item)} >Proceed to Payment</Button>
+//       </Box>
+//       <Box>
+  
+// </Box>
+//     </div>
+
+
+//   )
+// }
+
+// export default Bookingpage
+
+
+
+
+
+
+// import React, { useEffect } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { deleteBookingData, fetchBookingsData } from '../Redux/action';
+// import { Box, Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Button } from '@chakra-ui/react';
+// import { useNavigate } from 'react-router-dom';
+// import FooterSection from '../Components/Footer';
+
+// const BookingPage = () => {
+//   const dispatch = useDispatch();
+//   const { isloading, iserror, mybooking } = useSelector((state) => state);
+//   console.log(mybooking);
+
+//   useEffect(() => {
+//     dispatch(fetchBookingsData());
+//   }, [dispatch]);
+
+//   const handleDeleteBooking = (id) => {
+//     dispatch(deleteBookingData(id));
+//   };
+
+//   const navigate = useNavigate();
+
+//   const handleNavi = (item) => {
+//     navigate("/payment", { state: { amount: item.price } });
+//   };
+
+//   return (
+//     <div>
+//       Bookingpage
+
+//       {isloading ? (
+//         <h3>Loading....</h3>
+//       ) : iserror ? (
+//         <h1>Error loading booking details</h1>
+//       ) : mybooking.length === 0 ? (
+//         <h2>No tours booked yet!</h2>
+//       ) : (
+//         <div>
+//           {mybooking.map((item, index) => (
+//             <div key={item.id} className="booking-card">
+//               <Card
+//                 direction={{ base: 'column', sm: 'row' }}
+//                 overflow='hidden'
+//                 variant='outline'
+//                 style={{
+//                   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+//                   backgroundColor: index % 2 === 0 ? '#EDEDED' : '#FFFFFF',
+//                 }}
+//               >
+//                 <Image
+//                   objectFit='cover'
+//                   maxW={{ base: '100%', sm: '200px' }}
+//                   src={item.image}
+//                   alt='Caffe Latte'
+//                 />
+
+//                 <Stack align="left" justify="center">
+//                   <CardBody>
+//                     <Heading size='md'>{item.location}</Heading>
+//                     <Box py='2'>
+//                       <Text align="left">{item.country}</Text>
+//                     </Box>
+//                     <Box py='2'>
+//                       <Text align="left">Price(INR): {item.price}</Text>
+//                     </Box>
+//                   </CardBody>
+
+//                   <CardFooter>
+//                     <Button onClick={() => handleDeleteBooking(item.id)} variant='solid' colorScheme='teal'>
+//                       DELETE
+//                     </Button>
+                   
+//                   </CardFooter>
+//                 </Stack>
+//               </Card>
+//             </div>
+//           ))}
+//         </div>
+//       )}
+//       <Box margin="30px">
+//       <Button onClick={() => handleNavi(item)} variant='solid' colorScheme='blue' ml="2">
+//           Proceed To Pay
+//        </Button>
+//       </Box>
+//     </div>
+//   );
+// };
+
+// export default BookingPage;
+
+
+
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteBookingData, fetchBookingsData } from '../Redux/action';
-import { Box, Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Button } from '@chakra-ui/react'
+import { Box, Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Button } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import FooterSection from '../Components/Footer';
 
-const Bookingpage = () => {
+const BookingPage = () => {
   const dispatch = useDispatch();
-  const { isloading, iserror, mybooking } = useSelector((state) => state)
-  console.log(mybooking)
-
+  const { isloading, iserror, mybooking } = useSelector((state) => state);
+  console.log(mybooking);
 
   useEffect(() => {
-    dispatch(fetchBookingsData())
-  }, [dispatch])
-
-
+    dispatch(fetchBookingsData());
+  }, [dispatch]);
 
   const handleDeleteBooking = (id) => {
-    dispatch(deleteBookingData(id))
-  }
-const navigate=useNavigate()
-const handleNavi=()=>{
-  navigate("/payment")
-}
+    dispatch(deleteBookingData(id));
+  };
+
+  const navigate = useNavigate();
+
+  const handleNavi = (item) => {
+    navigate("/payment", { state: { amount: item.price } });
+  };
 
   return (
-    <div>Bookingpage
+    <div>
+      Bookingpage
 
       {isloading ? (
-
         <h3>Loading....</h3>
       ) : iserror ? (
-        <h1 >Error loading booking details</h1>
+        <h1>Error loading booking details</h1>
       ) : mybooking.length === 0 ? (
-        <h2 >No tours booked yet !</h2>
+        <h2>No tours booked yet!</h2>
       ) : (
         <div>
           {mybooking.map((item, index) => (
-            <div key={item.id} className="booking-card"
-            >
+            <div key={item.id} className="booking-card">
               <Card
                 direction={{ base: 'column', sm: 'row' }}
                 overflow='hidden'
                 variant='outline'
                 style={{
                   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                  backgroundColor: index % 2 === 0 ? '#EDEDED' : '#FFFFFF', // Set your background colors
+                  backgroundColor: index % 2 === 0 ? '#EDEDED' : '#FFFFFF',
                 }}
-
-
               >
                 <Image
                   objectFit='cover'
@@ -58,17 +258,14 @@ const handleNavi=()=>{
                   alt='Caffe Latte'
                 />
 
-
                 <Stack align="left" justify="center">
                   <CardBody>
                     <Heading size='md'>{item.location}</Heading>
-
-
                     <Box py='2'>
                       <Text align="left">{item.country}</Text>
                     </Box>
                     <Box py='2'>
-                      <Text align="left">Price(INR):{item.price}</Text>
+                      <Text align="left">Price(INR): {item.price}</Text>
                     </Box>
                   </CardBody>
 
@@ -76,27 +273,19 @@ const handleNavi=()=>{
                     <Button onClick={() => handleDeleteBooking(item.id)} variant='solid' colorScheme='teal'>
                       DELETE
                     </Button>
+                    <Button onClick={() => handleNavi(item)} variant='solid' colorScheme='blue' ml="2">
+                      Proceed To Pay
+                    </Button>
                   </CardFooter>
                 </Stack>
               </Card>
             </div>
-
           ))}
         </div>
       )}
-      <Box
-      margin="30px">
-
-
-        <Button colorScheme='blue' _hover={{ bg: 'teal.800' }} onClick={handleNavi} >Proceed to Payment</Button>
-      </Box>
-      <Box>
-  
-</Box>
+     
     </div>
+  );
+};
 
-
-  )
-}
-
-export default Bookingpage
+export default BookingPage;
