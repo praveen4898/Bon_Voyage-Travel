@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "../CSS/signup.css"
-
-
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../Redux/action';
+import {useNavigate} from 'react-router-dom';
+import { useToast } from '@chakra-ui/react';
 export const Loginform = () => {
     const [formData, setFormData] = useState({
         username: '',
@@ -15,18 +17,43 @@ export const Loginform = () => {
           [e.target.name]: e.target.value,
         });
       };
-    
-      const handleLogin = async (e) => {
+    const navigate=useNavigate()
+
+    const toast = useToast()
+
+      const dispatch=useDispatch()
+      const handleLogin =  (e) => {
         e.preventDefault();
     
-        try {
-          const response = await axios.post('https://mockserver-3.onrender.com/users', formData);
-          const { token } = response.data;
+        dispatch(loginUser(formData))
+        .then(()=>{
+          toast({
+            title: 'Login Sucessful.',
+            description: "User Logged in successfully",
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          })
+            navigate('/')
+            
+        })
+        .catch((err)=>{
+          toast({
+            title: 'Login Failed.',
+            description: "Invalid credential",
+            status: 'Failure',
+            duration: 9000,
+            isClosable: true,
+          })
+        })
+        // try {
+        //   const response = await axios.post('https://mockserver-3.onrender.com/users', formData);
+        //   // const { token } = response.data;
     
-          localStorage.setItem('token', token);
-            } catch (error) {
-          console.error('Error during login:', error);
-        }
+        //   localStorage.setItem('token', token);
+        //     } catch (error) {
+        //   console.error('Error during login:', error);
+        // }
       };
     return (
         <div className='signuppage'>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "../CSS/signup.css"
+import { useDispatch, useSelector } from 'react-redux'
+import { registerUser } from '../Redux/action';
 
 
 export const SignupForm = () => {
@@ -9,6 +11,10 @@ export const SignupForm = () => {
         password: '',
     });
 
+ const dispatch= useDispatch();
+
+const users=useSelector((store)=>store.users)
+console.log(users)
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -16,14 +22,18 @@ export const SignupForm = () => {
         });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post('https://mockserver-3.onrender.com/users', formData);
-            console.log('Server response:', response.data);
-        } catch (error) {
-            console.error('Error submitting data:', error);
-        }
+        dispatch(registerUser(formData))
+        
+        // try {
+        //     const response = await axios.post('https://mockserver-3.onrender.com/users', formData);
+        //     console.log('Server response:', response.data);
+        // } catch (error) {
+        //     console.error('Error submitting data:', error);
+        // }
+
+        
     };
     return (
         <div className='signuppage'>
