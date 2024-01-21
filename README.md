@@ -50,10 +50,12 @@ Keep the catalog dynamic and ever-expanding with new and exciting packages.
 
 
 ## Tech Stack
-HTML/CSS: Used for structuring and styling the user interface.
-JavaScript:Used for scripting logic on both the frontend (React).
-React.js: A JavaScript library for building user interfaces, providing a dynamic and interactive experience.
-Chakra UI: A React component library for quickly building accessible and responsive user interfaces.
+
+- **HTML/CSS:** Used for structuring and styling the user interface.
+- **JavaScript:** Used for scripting logic on both the frontend (React).
+- **React.js:** A JavaScript library for building user interfaces, providing a dynamic and interactive experience.
+- **Chakra UI:** A React component library for quickly building accessible and responsive user interfaces.
+
 
 
 ## Screenshot of Website
