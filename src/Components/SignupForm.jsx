@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "../CSS/signup.css"
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux'
+import { registerUser } from '../Redux/action';
+import { useNavigate } from 'react-router-dom';
+
+
+
+
 
 export const SignupForm = () => {
     const [formData, setFormData] = useState({
         firstname:'',
         lastname:'',
+
         email: '',
         password: '',
     });
+    const navigate=useNavigate();
+ const dispatch= useDispatch();
 
+const users=useSelector((store)=>store.users)
+console.log(users)
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -18,17 +29,21 @@ export const SignupForm = () => {
         });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post('https://mockserver-3.onrender.com/users', formData);
-            console.log('Server response:', response.data);
-        } catch (error) {
-            console.error('Error submitting data:', error);
-        }
+        dispatch(registerUser(formData))
+        navigate('/login')
+        
+       
+        
     };
     return (
+
+
+
+
         <div className='signup'>
+
             <h1 className='heading' style={{width:"fit-content", margin:"auto", fontSize:"40px"}}>Signup Page</h1>
             <form onSubmit={handleSubmit}>
             <label style={{margin:"auto", color:"aliceblue", fontSize:"19px",}}>
@@ -37,9 +52,12 @@ export const SignupForm = () => {
                     <input
                         className='username'
                         type="text"
-                        name="firstname"
+
+                        name="firstName"
                         placeholder='First name'
-                        value={formData.firstname}
+                        value={formData.firstName}
+
+
                         onChange={handleChange}
                     />
                 </label>
@@ -50,9 +68,11 @@ export const SignupForm = () => {
                     <input
                         className='username'
                         type="text"
-                        name="lastname"
+
+                        name="lastName"
                         placeholder='Last name'
-                        value={formData.lastname}
+                        value={formData.lastName}
+
                         onChange={handleChange}
                     />
                 </label>
@@ -83,10 +103,20 @@ export const SignupForm = () => {
                     />
                 </label>
                 <br />
-                <Link to="/login"><button className='btn' type="submit">Sign Up</button></Link>
+
+                    <button className='btn' type="submit">Sign Up</button>
+
             </form>
         </div>
     )
+
+
+
+
+
+
+
+
 };
 
 export default SignupForm;
