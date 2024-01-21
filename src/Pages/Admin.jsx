@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { Box,Heading,Flex } from '@chakra-ui/react'
-import { SideDrawer } from '../Components/AdminSide/SideDrawer'
 import  axios  from 'axios';
 import { AdminTable } from '../Components/AdminSide/AdminTable';
 
@@ -8,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Spacer,Button } from '@chakra-ui/react'
 import { fetchDestinationData } from '../Redux/action';
 import Users from '../Components/AdminSide/Users';
-import SmallScreenCard from '../Components/AdminSide/SmallScreenCard';
 
 import {useNavigate} from 'react-router-dom'
 
@@ -89,7 +87,7 @@ async function DeleteUser(id){
         {/* <SideDrawer/> */}
 
         <Heading color='teal' >Admin Dashboard</Heading>
-       <Button onClick={logout} colorScheme='teal' position={'absolute'} left={'90%'}>Logout</Button>
+       <Button onClick={logout} colorScheme='teal' position={'absolute'} left={'85%'}>Logout</Button>
         </Flex>
        
        <Spacer/>

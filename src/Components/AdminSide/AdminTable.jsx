@@ -1,9 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import {
     Table,
     Thead,
     Tbody,
-    Tfoot,
     Tr,
     Th,
     Td,
@@ -11,27 +10,16 @@ import {
     TableContainer,
     Image ,
     Button,
-    Flex,
     Spacer,
   } from '@chakra-ui/react'
 import axios from 'axios';
 import AddLocations from './AddLocations';
 
-
-  // const dynamicSort = (key, order='asc') => (a, b) => {
-  //   const aValue = a[key];
-  //   const bValue = b[key];
-
-  //   if (aValue < bValue) return order === 'asc' ? -1 : 1;
-  //   if (aValue > bValue) return order === 'asc' ? 1 : -1;
-  //   return 0;
-  // };
-
   async function DeleteLocation(id){
     try {
         let res= await axios.delete(`https://mockserver-3.onrender.com/locations/${id}`);
         
-        console.log(id)
+        console.log(res)
     } catch (error) {
         console.log(error)
     }
@@ -42,28 +30,13 @@ const MemoizedAddLocations = React.memo(AddLocations);
 
 export const AdminTable = ({props}) => {
   const [data,setData]=useState(props);
- 
-  useEffect(()=>{
-    setData(props)
-   },[data])
+  
+  const handleDelete=useCallback((postId)=>{
+    DeleteLocation(postId);
+    const x=data.filter((e)=>e.id!=postId)
+    setData(x)
 
-  const handleSortCountry=(e)=>{
-  // e.preventDefault();
-  // const sortedByCountry=data.sort((a,b)=>{return (b.country).localeCompare(a.country)});
-
-  // setData(sortedByCountry);
-  // console.log(sortedByCountry)
-  // console.log("clicked")
-}
-// console.log("sorted",sortedById)
-
-
-const handleDelete=useCallback((postId)=>{
-  DeleteLocation(postId);
-  const x=data.filter((e)=>e.id!=postId)
-  setData(x)
-
-},[])
+  },[])
 
   return (<>
       <MemoizedAddLocations  />
@@ -74,7 +47,7 @@ const handleDelete=useCallback((postId)=>{
       <Thead>
         <Tr>
           <Th>Image</Th>
-          <Th onClick={handleSortCountry}>country</Th>
+          <Th>country</Th>
           <Th>location</Th>
           <Th>description</Th>
           <Th isNumeric>Price</Th>

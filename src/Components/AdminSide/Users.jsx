@@ -19,7 +19,6 @@ import axios from 'axios';
 const Users = ({props,onDelete}) => {
 
   const handleDelete=(Id)=>{
-    // DeleteUser(Id);
     onDelete(Id);
     console.log('user deleted')
     

@@ -60,7 +60,7 @@ const AddLocations = () => {
     
     <>
      <Flex direction={'column'}>
-        <Button colorScheme='green' onClick={onOpen}>Add Locations</Button>
+        <Button colorScheme='teal' onClick={onOpen}>Add Locations</Button>
     </Flex>
 
       <Modal
@@ -72,7 +72,7 @@ const AddLocations = () => {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Add Locations</ModalHeader>
+          <ModalHeader textAlign={'center'} color='teal'>Add Locations</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl>
@@ -111,7 +111,7 @@ const AddLocations = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3}
+            <Button colorScheme='teal' mr={3}
             onClick={handleSubmit}
             
             >
