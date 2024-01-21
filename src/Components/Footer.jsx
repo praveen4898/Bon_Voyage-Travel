@@ -9,7 +9,7 @@ export const FooterSection = () => {
             <div className='footerMain' >
                 <div className="footer">
                     < div className='content'>
-                        <a href="/support"><h1 style={{ color: "#6388a6" }}>Support</h1></a>
+                        <a href="/support"><h1 style={{ color: "white" }}>Support</h1></a>
                         <p>Help Center</p>
                         <p>Safety information</p>
                         <p>Cancellation Option</p>
@@ -18,7 +18,7 @@ export const FooterSection = () => {
                         <p>Report a neighbourhood concern</p>
                     </div >
                     < div className='content'>
-                        <h1 style={{ color: "#6388a6" }}>Community</h1>
+                        <h1 style={{ color: "white" }}>Community</h1>
                         <p>Disater relief housing</p>
                         <p>Support</p>
                         <p>Celebrating diversity & belonging</p>
@@ -26,7 +26,7 @@ export const FooterSection = () => {
 
                     </div >
                     < div className='content'>
-                        <h1 style={{ color: "#6388a6" }}>Housing</h1>
+                        <h1 style={{ color: "white" }}>Housing</h1>
                         <p>Try Housing</p>
                         <p>Protection from Homeownner</p>
                         <p>Explore housing resources</p>
@@ -34,7 +34,7 @@ export const FooterSection = () => {
                         <p>How to homeowner responsibly</p>
                     </div >
                     < div className='content'>
-                        <a href="/about"><h1 style={{ color: "#6388a6" }}>About</h1></a>
+                        <a href="/about"><h1 style={{ color: "white"}}>About</h1></a>
                         <p>Newsroom</p>
                         <p>Learn about new features</p>
                         <p>Letter from our founder</p>
@@ -75,10 +75,10 @@ export const FooterSection = () => {
                     <hr className='horizontalrule' />
                 <div className='copyright'>
                     <div className="sub1copyright">
-                        <p style={{fontSize:"15px"}}>©Copyright all rights reserved 2024</p>
+                        <p style={{fontSize:"15px", color:"white"}}>©Copyright all rights reserved 2024</p>
                     </div>
                     <div className="sub2copyright">
-                        <p>English(US)<span style={{color:"#01b9ff"}}>€</span>Euro</p>
+                        <p style={{color:"white"}}>English(US)<span style={{color:"white"}}>€</span>Euro</p>
                     </div>
                 </div>
             </div >
