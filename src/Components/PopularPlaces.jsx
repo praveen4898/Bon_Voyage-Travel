@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { Box } from '@chakra-ui/react';
 
 const PopularPlaces = () => {
   return (
-    <div>Popular Places To Visit</div>
-  )
+    <Box marginTop="100px">
+      Popular Places To Visit
+    </Box>
+  );
 }
 
-export default PopularPlaces
+export default PopularPlaces;
