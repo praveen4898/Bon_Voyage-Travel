@@ -59,6 +59,28 @@ Keep the catalog dynamic and ever-expanding with new and exciting packages.
 
 
 ## Screenshot of Website
+HOME PAGE
+<img width="960" alt="image" src="https://github.com/praveen4898/javascript-yodha-8901/assets/147683595/830d37bc-56f2-4100-a407-5b4b6fcb80a7">
+<img width="936" alt="image" src="https://github.com/praveen4898/javascript-yodha-8901/assets/147683595/71ec2ee7-89dc-45d1-aeff-1ba299662f63">
+
+DESTINATION PAGE
+<img width="942" alt="image" src="https://github.com/praveen4898/javascript-yodha-8901/assets/147683595/6aba89fb-297a-44be-b178-874a008c4761">
+
+SINGLE DESTINATION PAGE
+<img width="945" alt="image" src="https://github.com/praveen4898/javascript-yodha-8901/assets/147683595/92bd8af3-a741-40f2-bbf5-e0df6c448112">
+
+BOOKING PAGE
+<img width="947" alt="image" src="https://github.com/praveen4898/javascript-yodha-8901/assets/147683595/f8ec1065-33ec-4171-bf54-41d9b3ec1add">
+
+PAYMENT PAGE
+<img width="955" alt="image" src="https://github.com/praveen4898/javascript-yodha-8901/assets/147683595/dfdd3d2f-6cdc-4264-bb5e-64a903f4c7aa">
+
+SUPPORT US PAGE
+<img width="951" alt="image" src="https://github.com/praveen4898/javascript-yodha-8901/assets/147683595/c403ce2b-bb4f-4107-b645-17fcff650098">
+
+ADMIN DASHBOARD
+<img width="948" alt="image" src="https://github.com/praveen4898/javascript-yodha-8901/assets/147683595/0a8cc252-f69a-4b34-bf7a-ce42a3cd6df6">
+
 
 
 
