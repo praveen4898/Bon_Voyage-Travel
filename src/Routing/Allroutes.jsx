@@ -11,14 +11,18 @@ import Defaultpage from '../Pages/Defaultpage';
 import Support from '../Pages/Support';
 import AboutUs from '../Components/AboutUS';
 import Login from '../Pages/Login';
+import PrivateRouting from './PrivateRouting';
 
 const Allroutes = () => {
+
+
+
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/booking" element={<Bookingpage />} />
       <Route path="/destination" element={<Destination />} />
-      <Route path="/singledestination/:id" element={<Singledestination />} />
+      <Route path="/singledestination/:id" element={<PrivateRouting><Singledestination /></PrivateRouting>} />
       <Route path="/support" element={<Support/>} />
       <Route path="/signup" element={<Loginsignup />} />
       <Route path="/login" element={<Login />} />

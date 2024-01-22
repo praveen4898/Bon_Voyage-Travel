@@ -1,6 +1,6 @@
 import axios from "axios";
 import { LOGIN_SUCCESS, GET_DESTINATION_FAILURE, GET_DESTINATION_REQUEST, GET_DESTINATION_SUCCESS,GET_BOOKINGS_DATA_REQUEST,GET_BOOKINGS_DATA_SUCCESS,
-GET_BOOKINGS_DATA_FAILURE,DELETE_BOOKINGS_DATA_FAILURE,DELETE_BOOKINGS_DATA_SUCCESS,DELETE_BOOKINGS_DATA_REQUEST, REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILURE, LOGIN_REQUEST, LOGIN_FAILURE } from "./actiontype";
+GET_BOOKINGS_DATA_FAILURE,DELETE_BOOKINGS_DATA_FAILURE,DELETE_BOOKINGS_DATA_SUCCESS,DELETE_BOOKINGS_DATA_REQUEST, REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILURE, LOGIN_REQUEST, LOGIN_FAILURE, LOGOUT_REQUEST, LOGOUT_SUCCESS } from "./actiontype";
  
 const DestiUrl="https://mockserver-3.onrender.com/locations";
 const bookingUrl = "https://mockserver-3.onrender.com/bookings";
@@ -141,9 +141,10 @@ export const loginUser=(formData)=>(dispatch)=>{
 el.email==formData.email && el.password==formData.password 
   )
 console.log(allow)
-
+let token=Math.random();
 if(allow){
   resolve (true)
+  dispatch({type:LOGIN_SUCCESS,payload:token})
 }
 else{
   alert("Invalid Credentials,Please Check the credentials")
@@ -157,4 +158,10 @@ else{
     dispatch({type:LOGIN_FAILURE,})
   })
 })
+}
+
+
+
+ export const userLogout=(dispatch)=>{
+  dispatch({type:LOGOUT_SUCCESS})
 }

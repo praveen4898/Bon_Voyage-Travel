@@ -18,10 +18,23 @@ import {
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { FaUserInjured, FaBars } from 'react-icons/fa';
+import {useDispatch, useSelector} from 'react-redux';
+import { userLogout } from '../Redux/action';
 
 export const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isSmallerThan768] = useMediaQuery('(max-width: 767px)');
+  const users=useSelector(store=>store.users)
+  const isAuth=useSelector(store=>store.isAuth)
+  const token=useSelector(store=>store.token)
+  console.log(users,isAuth,token)
+
+const dispatch=useDispatch()
+const handleLogout=()=>{
+  dispatch(userLogout)
+}
+
+
 
   return (
     <Box style={{ backgroundColor: '#159895', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', padding: '10px 20px' }}>
@@ -149,7 +162,18 @@ export const Navbar = () => {
             </>
           )}
 
-          {!isSmallerThan768 && (
+
+
+          {isAuth ? <div style={{display:"flex",alignItems:"center",gap:"20px"}}>
+
+        <h2>Hello,{users[0].firstName}</h2>
+        <Link to='/'> 
+        
+   <Button onClick={handleLogout}> Log out</Button>
+
+   </Link> 
+          </div> :  
+         ( 
             <Stack direction='row' spacing={2}>
               <ChakraLink as={Link} to='/signup'>
               <Button
@@ -174,7 +198,11 @@ export const Navbar = () => {
               </Button>
               </ChakraLink>
             </Stack>
-          )}
+          )
+
+}
+
+
         </Flex>
       </Flex>
     </Box>
