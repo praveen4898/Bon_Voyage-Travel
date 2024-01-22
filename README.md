@@ -39,24 +39,21 @@ Destination page showcasing a wide array of travel options.
 A support page for users to post their thoughts, feedback, and inquiries.
 Bon Voyage values user input and is committed to addressing any concerns promptly.
 
-### Dynamic and Expandable Catalog:
+### Admin Panel [Dynamic and Expandable Catalog]:
 Admin interface for adding and managing diverse travel offerings.
 Keep the catalog dynamic and ever-expanding with new and exciting packages.
 
 
-
 ## Deployment
-
+https://65ae04d77f6077f381dc06a8--cheery-sprite-5f8d56.netlify.app/
 
 
 ## Tech Stack
 
-- **HTML/CSS:** Used for structuring and styling the user interface.
-- **JavaScript:** Used for scripting logic on both the frontend (React).
-- **React.js:** A JavaScript library for building user interfaces, providing a dynamic and interactive experience.
-- **Chakra UI:** A React component library for quickly building accessible and responsive user interfaces.
-
-
+- *HTML/CSS:* Used for structuring and styling the user interface.
+- *JavaScript:* Used for scripting logic on both the frontend (React).
+- *React.js:* A JavaScript library for building user interfaces, providing a dynamic and interactive experience.
+- *Chakra UI:* A React component library for quickly building accessible and responsive user interfaces.
 
 ## Screenshot of Website
 HOME PAGE
@@ -81,6 +78,19 @@ SUPPORT US PAGE
 ADMIN DASHBOARD
 <img width="948" alt="image" src="https://github.com/praveen4898/javascript-yodha-8901/assets/147683595/0a8cc252-f69a-4b34-bf7a-ce42a3cd6df6">
 
+## Team Members
+
+Team Members The following team members have carried out the development of this application:
+
+Team Lead : Praveen Kumar (fw28_133)         [GitHub:praveen4898]
+
+Team Member 1 : Aishwarya Lohakare(fw28_153) [GitHub: Aishu1123]
+
+Team Member 2 : Nidhi (fw28_301)             [GitHub:Nidhis2608]
+
+Team Member 3:Deepak Underiya (fw28_088)     [GitHub:underiya]
+
+Team Member 4:	Kundan Kumar Suraj (fw28_303) [Github:kundan761]
 
 
 
