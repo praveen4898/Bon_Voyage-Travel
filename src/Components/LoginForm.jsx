@@ -29,7 +29,34 @@ export const Loginform = () => {
   const dispatch = useDispatch()
   const handleLogin = (e) => {
     e.preventDefault();
+   
 
+    if(formData.email=="admin@gmail.com"){
+      dispatch(loginUser(formData))
+      .then(() => {
+        toast({
+          title: 'Login Sucessful.',
+          description: "User Logged in successfully",
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })
+        navigate('/admin')
+
+      })
+      .catch((err) => {
+        toast({
+          title: 'Login Failed.',
+          description: "Invalid credential",
+          status: 'Failure',
+          duration: 9000,
+          isClosable: true,
+        })
+      })
+    }
+    else{
+
+    
     dispatch(loginUser(formData))
       .then(() => {
         toast({
@@ -51,6 +78,7 @@ export const Loginform = () => {
           isClosable: true,
         })
       })
+    }
     // try {
     //   const response = await axios.post('https://mockserver-3.onrender.com/users', formData);
     //   // const { token } = response.data;

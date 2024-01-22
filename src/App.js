@@ -6,12 +6,12 @@ import {useSelector} from 'react-redux'
 import FooterSection from './Components/Footer';
 
 function App() {
-  const state=useSelector(state=>state);
+  const state=useSelector(state=>state.users);
   console.log("state",state);
 
-  
+  const mail=state.email;
 
-  const mail='admin@gmail.co';
+  
   return (
     <div className="App">
      { (mail==='admin@gmail.com')?<Allroutes />:

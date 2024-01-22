@@ -20,6 +20,7 @@ import { Link } from 'react-router-dom';
 import { FaUserInjured, FaBars } from 'react-icons/fa';
 import {useDispatch, useSelector} from 'react-redux';
 import { userLogout } from '../Redux/action';
+import BONVOYAGELOGO from '../Image/BONVOYAGELOGO.png';
 
 export const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -36,12 +37,14 @@ const handleLogout=()=>{
 
 
 
+
   return (
     <Box style={{ backgroundColor: '#159895', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', padding: '10px 20px' }}>
       <Flex maxWidth='container.xl' alignItems='center' justify='space-between'>
         <Box>
           <Heading size='md' ml="20" style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>
-            LOGO
+            {/* LOGO */}
+            <img style={{height:"80px",width:"70px"}}  src={BONVOYAGELOGO} alt="" />
           </Heading>
         </Box>
 
